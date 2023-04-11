@@ -16,6 +16,10 @@ Tretkoff, E. (2008). _October 1958: Physicist Invents First Video Game_. \[onlin
 
 ‌Clement, J. (2021). _Gaming by demographic group UK 2013-2018_. \[online] Statista. Available at: [https://www.statista.com/statistics/300513/gaming-by-demographic-group-uk/](https://www.statista.com/statistics/300513/gaming-by-demographic-group-uk/)
 
+Newzoo. (n.d.). _Top Countries & Markets by Game Revenues | Biggest Games Markets_. \[online] Available at: [https://newzoo.com/resources/rankings/top-10-countries-by-game-revenues](https://newzoo.com/resources/rankings/top-10-countries-by-game-revenues).
+
+‌
+
 
 
 
