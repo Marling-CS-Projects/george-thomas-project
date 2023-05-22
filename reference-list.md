@@ -20,6 +20,12 @@ Newzoo. (n.d.). _Top Countries & Markets by Game Revenues | Biggest Games Market
 
 Wikipedia. (2021). _Gaming keypad_. \[online] Available at: [https://en.wikipedia.org/wiki/Gaming\_keypad#:\~:text=The%20commonly%20used%20keys%20for](https://en.wikipedia.org/wiki/Gaming\_keypad)
 
+‌Zeolearn. (n.d.). _How to Install Node JS on Windows | Set Up Node JS on Windows_. \[online] Available at: [https://www.zeolearn.com/magazine/install-node-js-on-windows](https://www.zeolearn.com/magazine/install-node-js-on-windows)
+
+anzhou (n.d.). _Visual Studio 2019 System Requirements_. \[online] learn.microsoft.com. Available at: [https://learn.microsoft.com/en-us/visualstudio/releases/2019/system-requirements](https://learn.microsoft.com/en-us/visualstudio/releases/2019/system-requirements).
+
+‌
+
 ‌
 
 ‌
