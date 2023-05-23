@@ -24,6 +24,18 @@ Wikipedia. (2021). _Gaming keypad_. \[online] Available at: [https://en.wikipedi
 
 anzhou (n.d.). _Visual Studio 2019 System Requirements_. \[online] learn.microsoft.com. Available at: [https://learn.microsoft.com/en-us/visualstudio/releases/2019/system-requirements](https://learn.microsoft.com/en-us/visualstudio/releases/2019/system-requirements).
 
+Google.com. (2012). _Chrome Browser system requirements - Google Chrome Enterprise Help_. \[online] Available at: [https://support.google.com/chrome/a/answer/7100626?hl=en](https://support.google.com/chrome/a/answer/7100626?hl=en).
+
+Apple Newsroom. (n.d.). _Apple Introduces Safari for Windows_. \[online] Available at: [https://www.apple.com/newsroom/2007/06/11Apple-Introduces-Safari-for-Windows/#:\~:text=System%20Requirements\&text=Safari%203%20for%20Windows%20requires](https://www.apple.com/newsroom/2007/06/11Apple-Introduces-Safari-for-Windows/).
+
+Small Business - Chron.com. (n.d.). _Mozilla Firefox System Requirements_. \[online] Available at: [https://smallbusiness.chron.com/mozilla-firefox-system-requirements-59076.html](https://smallbusiness.chron.com/mozilla-firefox-system-requirements-59076.html).
+
+‌
+
+‌
+
+‌
+
 ‌
 
 ‌
