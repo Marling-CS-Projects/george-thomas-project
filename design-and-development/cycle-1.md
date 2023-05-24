@@ -2,6 +2,8 @@
 
 ## Design
 
+For my first cycle it is important for me to create the groundwork of my project to build from. Therefore, in this cycle I will be setting up a basic project using kaboom.js. This will feature the map layout with no graphics.
+
 ### Objectives
 
 \[describe the cycle]
