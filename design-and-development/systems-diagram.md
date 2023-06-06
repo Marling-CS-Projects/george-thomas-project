@@ -3,22 +3,7 @@
 ## Systems Diagram
 
 ```
-  +------------------------+
-  |        Game World       |
-  +------------------------+
-           |       |
-           |       |
-           |       |
-           v       v
-+--------+        +--------+
-|   Player   |---►|   Input    |
-| Controller |    +--------+
-+--------+        |        |
-           |       |        |
-           |       v        v
-           |    +-----+  +--------+
-           +---►|Physics|  |  Audio  |
-                +-----+  +--------+
+***
 ```
 
 ![NOT MY COMPLETED SYSTEMS DIAGRAM](https://github.com/Marling-School/alevel-project-template/blob/docs/.gitbook/assets/System%20Diagram.jpg)
