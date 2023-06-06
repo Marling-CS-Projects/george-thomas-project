@@ -100,27 +100,6 @@ const level = addLevel([
 		],
 	},
 })
-
-// Get the player object from tag
-const player = level.get("player")[0]
-
-
-setGravity(2400)
-const SPEED = 480
-// Movements
-onKeyPress("space", () => {
-	if (player.isGrounded()) {
-		player.jump()
-	}
-})
-
-onKeyDown("left", () => {
-	player.move(-SPEED, 0)
-})
-
-onKeyDown("right", () => {
-	player.move(SPEED, 0)
-})
 ```
 
 <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
