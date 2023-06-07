@@ -4,12 +4,13 @@
 
 For my first cycle it is important for me to create the groundwork of my project to build from. Therefore, in this cycle I will be setting up a basic project using kaboom.js. This will feature the map layout with no graphics.
 
+Firstly, I assigned different symbols to be used as parts of the map. The first bit of code will display  what the map looks like and the location where the player starts. The design will use kaboom sprites to begin with as placeholders to my own designs.
+
 ### Objectives
 
-\[describe the cycle]
-
-* [x] Do a thing
-* [x] Do another thing
+* [x] Begin basic project using kaboom.js
+* [x] Create map design for the start of the game and where the player spawns
+* [x] Use Kaboom.js sprites to create an example screenshot
 
 ### Usability Features
 

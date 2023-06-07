@@ -16,7 +16,6 @@ Explanation:
 2. Player Controller: This component handles player input, using keyboard commands. It receives input from the player and translates it into actions within the game world, controlling the player's character.
 3. Input: This component captures input from the player, such as keyboard presses or controller movements. It relays the input to the Player Controller for processing.
 4. Physics: This component simulates the physical interactions within the game world. It governs the movement of the player character, collisions with platforms and enemies, gravity, and other physical forces.
-5. Audio: This component handles the audio aspects of the game, including background music, sound effects, and voiceovers. It synchronizes and plays the appropriate audio based on events and actions within the game.
 
 ## Usability Features
 
