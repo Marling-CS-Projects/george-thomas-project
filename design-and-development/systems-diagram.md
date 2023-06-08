@@ -1,12 +1,8 @@
 # 2.1 Design Frame
 
-## Systems Diagram
+Systems Diagram
 
-```
-***
-```
-
-![NOT MY COMPLETED SYSTEMS DIAGRAM](https://github.com/Marling-School/alevel-project-template/blob/docs/.gitbook/assets/System%20Diagram.jpg)
+<figure><img src="../.gitbook/assets/Systems Diagram.PNG" alt=""><figcaption></figcaption></figure>
 
 This systems diagram outlines the key components of the game that will be created during the development stage. Each section has been further divided into smaller sub-sections to facilitate a gradual and systematic construction of the game. The development process will involve selecting one or two sections at a time to focus on, allowing for a step-by-step assembly of the game. This breakdown aligns with the identified success criteria, ensuring that each section contributes to the overall achievement of the game's goals.
 
