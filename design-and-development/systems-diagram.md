@@ -8,10 +8,8 @@ This systems diagram outlines the key components of the game that will be create
 
 Explanation:
 
-1. Game World: This component represents the virtual world in which the game takes place. It consists of various levels, platforms, obstacles, enemies, and interactive elements.
-2. Player Controller: This component handles player input, using keyboard commands. It receives input from the player and translates it into actions within the game world, controlling the player's character.
-3. Input: This component captures input from the player, such as keyboard presses or controller movements. It relays the input to the Player Controller for processing.
-4. Physics: This component simulates the physical interactions within the game world. It governs the movement of the player character, collisions with platforms and enemies, gravity, and other physical forces.
+1. Mechanics: This includes the players controls for the movement and combat between the enemies. Mechanics also includes the AI movement and their combat. For my game this includes how the enemies will move inside of the boxing rings. It will also include how the enemies will go towards the player and will attempt to attack. Mechanics will also include how the display will follow the player as they traverse the map.
+2. Menu and Time Record: apart from an obvious menu for my game, this section will also include the&#x20;
 
 ## Usability Features
 
