@@ -23,9 +23,7 @@ Firstly, I assigned different symbols to be used as parts of the map. The first 
 ### Pseudocode
 
 ```
-procedure do_something
-    
-end procedure
+kaboom
 ```
 
 ## Development

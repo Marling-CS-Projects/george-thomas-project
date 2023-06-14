@@ -1,15 +1,18 @@
 # 2.1 Design Frame
 
-Systems Diagram
+<figure><img src="../.gitbook/assets/Systems Diagram 2.PNG" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Systems Diagram.PNG" alt=""><figcaption></figcaption></figure>
+Systems Diagram
 
 This systems diagram outlines the key components of the game that will be created during the development stage. Each section has been further divided into smaller sub-sections to facilitate a gradual and systematic construction of the game. The development process will involve selecting one or two sections at a time to focus on, allowing for a step-by-step assembly of the game. This breakdown aligns with the identified success criteria, ensuring that each section contributes to the overall achievement of the game's goals.
 
 Explanation:
 
 1. Mechanics: This includes the players controls for the movement and combat between the enemies. Mechanics also includes the AI movement and their combat. For my game this includes how the enemies will move inside of the boxing rings. It will also include how the enemies will go towards the player and will attempt to attack. Mechanics will also include how the display will follow the player as they traverse the map.
-2. Menu and Time Record: apart from an obvious menu for my game, this section will also include the&#x20;
+2. Menu and Time Record: apart from an obvious menu for my game, this section will also include the timing system where players will attempt to beat their best times to complete the game.
+3. Map Layout: This section will include the layout of the separate boxing rings. Furthermore, this section will include what the power-ups are and where they will be spawned.
+4. Graphics: This includes what the different parts of my game look like. What I mean by that is the design of the different characters like the player, enemies and the boss. Furthermore, the design of the power-ups, boxing rings and the background.
+5. Non-functional aspects: refers to the system qualities. Therefore, this section will include things such as the FPS, the enjoyability, and keeping to the PEGI rating.
 
 ## Usability Features
 
