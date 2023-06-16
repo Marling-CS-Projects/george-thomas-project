@@ -14,6 +14,8 @@ Firstly, I assigned different symbols to be used as parts of the map. The first 
 
 ### Usability Features
 
+Non-functional aspects: Make the map include graphics that are user-friendly for all users.
+
 ### Key Variables
 
 | Variable Name | Use                   |
