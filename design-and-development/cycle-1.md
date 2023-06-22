@@ -9,8 +9,9 @@ Firstly, I assigned different symbols to be used as parts of the map. The first 
 ### Objectives
 
 * [x] Begin basic project using kaboom.js
-* [x] Create map design for the start of the game and where the player spawns
-* [x] Use Kaboom.js sprites to create an example screenshot
+* [x] Spawn bean
+* [x] Implement gravity
+* [x] Implement the map floor
 
 ### Usability Features
 
@@ -18,15 +19,17 @@ Non-functional aspects: Make the map include graphics that are user-friendly for
 
 ### Key Variables
 
-| Variable Name | Use                   |
-| ------------- | --------------------- |
-| foo           | does something useful |
+| Variable Name      | Use                           |
+| ------------------ | ----------------------------- |
+| setGravity         | sets the gravity for the bean |
+| loadSprite         | loads the bean                |
+| const player = add | spawn location for the bean   |
 
 ### Pseudocode
 
-```
-kaboom
-```
+<pre><code><strong>import kaboom
+</strong>import assests
+</code></pre>
 
 ## Development
 
@@ -49,9 +52,8 @@ Evidence for testing
 
 ### Evidence
 
-```javascript
-// Start game
-kaboom()
+<pre class="language-javascript"><code class="lang-javascript"><strong>// Start game
+</strong>kaboom()
 
 // Loads assets
 loadSprite("player", "/sprites/bean.png") // The player
@@ -101,6 +103,10 @@ const level = addLevel([
 		],
 	},
 })
-```
+</code></pre>
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Example Picture using Kaboom.js sprites</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+This image displays what my map looks like on spawn using Kaboom.js sprites. This therefore completes my objective:
+
+* [x] Create map design for the start of the game and where the player spawns
