@@ -32,20 +32,34 @@ Non-functional aspects: As the map develops, keep it being easy to understand an
 
 ### Outcome
 
-This cycle has created the map floor for my game, which has enabled me to spawn my player on it. The graphics however, are still a work in progress as the floor is plain white and the player is the "bean" which is a premade sprite from kaboom.js. I split this cycle's code into 3 small and simple sections.
+
 
 ```javascript
-import kaboom from "kaboom"
-import "kaboom/global"
+const level = addLevel([
+	// Design the level layout with symbols
+	"=              =",
+        "=              =",
+        "=              =",
+], {
+	// The size of each block
+	tileWidth: 64,
+	tileHeight: 64,
+	// The position of the most left block
+	pos: vec2(900, 785),
+	// Define symbol meaning
+	tiles: {
+"=": () => [
+    sprite("steel"),
+    area(),
+    body({ isStatic: true }),
+    anchor("bot"),
+ ],
 
-kaboom();
-
-// Load asset
-
-loadSprite("bean", "/sprites/bean.png"); // The player
+	},
+})
 ```
 
-This section above starts the game and loads the player icon. In this case it is the "bean".
+
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>setGravity(2400);
 </strong>
@@ -58,7 +72,7 @@ const player = add([
 ])
 </code></pre>
 
-This section above determines the spawn location and the gravity that the player experiences. This will be crucial for movement in future cycles.
+
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>add([
 </strong>    rect(width(), 48),
@@ -69,15 +83,15 @@ This section above determines the spawn location and the gravity that the player
 ])
 </code></pre>
 
-This final section creates the map floor. Currently in just plain white.
+
 
 ### Challenges
 
-My first big challenge of the development for my project was familiarizing myself with how to use Kaboom.js through Repl. I had no past experience of coding using kaboom on Repl. This meant that I had to do some practice and watch some quick tutorials to get my head around the online library.
+
 
 ## Testing
 
-Evidence for testing
+
 
 ### Tests
 
