@@ -28,7 +28,7 @@ Non-functional aspects: As the map develops, keep it being easy to understand an
 
 ### Outcome
 
-In this small cycle, the aim was to create the boxing rings that the player would have to jump over. In the rings will spawn the enemies, and they will be repeated over and over again. The cycle was semi-successful,&#x20;
+In this small cycle, the aim was to create the boxing rings that the player would have to jump over. In the rings will spawn the enemies, and they will be repeated over and over again.&#x20;
 
 ```javascript
 const ring = addLevel([
