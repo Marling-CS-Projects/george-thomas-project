@@ -15,28 +15,24 @@ Non-functional aspects: As the map develops, keep it being easy to understand an
 
 ### Key Variables
 
-| Variable Name | Use |
-| ------------- | --- |
-|               |     |
-|               |     |
-|               |     |
+| Variable Name | Use                      |
+| ------------- | ------------------------ |
+| const ring    | creates the boxing rings |
 
 ### Pseudocode
 
 ```
-
-
 ```
 
 ## Development
 
 ### Outcome
 
-
+In this small cycle, the aim was to create the boxing rings that the player would have to jump over. In the rings will spawn the enemies, and they will be repeated over and over again. The cycle was semi-successful,&#x20;
 
 ```javascript
-const level = addLevel([
-	// Design the level layout with symbols
+const ring = addLevel([
+	// The format of the boxing rings
 	"=              =",
         "=              =",
         "=              =",
@@ -53,35 +49,11 @@ const level = addLevel([
     area(),
     body({ isStatic: true }),
     anchor("bot"),
- ],
+           ],
 
 	},
 })
 ```
-
-
-
-<pre class="language-javascript"><code class="lang-javascript"><strong>setGravity(2400);
-</strong>
-const player = add([
-  sprite("bean"),
-  pos(120, 80),
-  area(),
-  body(),
-  "player"
-])
-</code></pre>
-
-
-
-<pre class="language-javascript"><code class="lang-javascript"><strong>add([
-</strong>    rect(width(), 48),
-    outline(4),
-    area(),
-    pos(0, height() - 25),
-    body({ isStatic: true})
-])
-</code></pre>
 
 
 
