@@ -22,6 +22,7 @@ Non-functional aspects: As the map develops, keep it being easy to understand an
 ### Pseudocode
 
 ```
+DO THIS
 ```
 
 ## Development
@@ -59,7 +60,7 @@ const ring = addLevel([
 
 ### Challenges
 
-
+My challenge with this task is deciding to carry on with the flour that I have go so far. The plain white block that I currently have has turned out to be quite problematic. I say this because, I am having difficulties extending it. It is not impossible, however quite time consuming.
 
 ## Testing
 
