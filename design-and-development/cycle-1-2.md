@@ -2,24 +2,31 @@
 
 ### Design
 
-In the second cycle, I am to further develop my map and create the boxing. This will the allow my project to properly expand. What I mean by that is multiple areas of the game can be developed as a result of the map being completed. These things include: controls and player movement, enemy spawn and movement, combat, and more.
+For my third cycle, It is very important for me to add the movement into the game. My objectives for this cycle would be to make the player movable, correct the gravity if needed, and adjust the camera to side-scrolling.
 
 ### Objectives
 
-* [x] Extend map
-* [x] Create boxing rings
+* [x] Player movement
+* [x] Check gravity
+* [x] Side-scrolling camera
 
 ### Usability Features
 
-Non-functional aspects: As the map develops, keep it being easy to understand and traverse for players.
+Non-functional aspects: Making my movement use controls/key-binds that are easy to understand for players. This is because my focus does not include making my game hard to get used to for players.
+
+Mechanics: The arrow-keys and space bar will be used for movement. Space bar = Jump, Left/right arrow keys = left/right.
 
 ### Key Variables
 
-| Variable Name | Use |
-| ------------- | --- |
-|               |     |
-|               |     |
-|               |     |
+| Variable Name            | Use                                                                                                                                                     |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| const SPEED              | keeps a constant speed of 480                                                                                                                           |
+| onKeyPress               | listens for "space" and has a callback function. It executes the callback function when "space" is pressed.                                             |
+| onKeyDown                | listens for down events rather than key press events. It also takes a key string and a callback function                                                |
+| player.isGrounded        | checks that the player is grounded                                                                                                                      |
+| player.onUpdate          | callback function is executed whenever the player updates                                                                                               |
+| player.onPhysiscsResolve | event listener for the 'player' object's physics resolution event. The provided callback function is executed when physics are resolved for the player. |
+| camPos                   | takes the 'player' object's world position and updates the camera position accordingly.                                                                 |
 
 ### Pseudocode
 
@@ -32,44 +39,40 @@ Non-functional aspects: As the map develops, keep it being easy to understand an
 
 ### Outcome
 
-This cycle has created the map floor for my game, which has enabled me to spawn my player on it. The graphics however, are still a work in progress as the floor is plain white and the player is the "bean" which is a premade sprite from kaboom.js. I split this cycle's code into 3 small and simple sections.
+Movement has been added and works just how I wanted. The code below shows how key presses are detected for 'space' and 'left/right arrow keys'. The code also shows the chosen speed of 480.
 
 ```javascript
-import kaboom from "kaboom"
-import "kaboom/global"
+const SPEED = 480
 
-kaboom();
+onKeyPress("space", () => {
+  if (player.isGrounded()) {
+     player.jump()
+   }
+})
 
-// Load asset
+onKeyDown("left", () => {
+  player.move(-SPEED, 0)
+})
 
-loadSprite("bean", "/sprites/bean.png"); // The player
+onKeyDown("right", () => {
+  player.move(SPEED, 0)
+})
+
 ```
 
-This section above starts the game and loads the player icon. In this case it is the "bean".
+This cycle has also implemented a "side-scrolling" camera mechanic. The code below shows this:
 
-<pre class="language-javascript"><code class="lang-javascript"><strong>setGravity(2400);
-</strong>
-const player = add([
-  sprite("bean"),
-  pos(120, 80),
-  area(),
-  body(),
-  "player"
-])
-</code></pre>
+```javascript
+player.onUpdate(() => {
+    camPos(player.worldPos())
+})
 
-This section above determines the spawn location and the gravity that the player experiences. This will be crucial for movement in future cycles.
+player.onPhysicsResolve(() => {
+    camPos(player.worldPos())
+})
+```
 
-<pre class="language-javascript"><code class="lang-javascript"><strong>add([
-</strong>    rect(width(), 48),
-    outline(4),
-    area(),
-    pos(0, height() - 25),
-    body({ isStatic: true})
-])
-</code></pre>
 
-This final section creates the map floor. Currently in just plain white.
 
 ### Challenges
 

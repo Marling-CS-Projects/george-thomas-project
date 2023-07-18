@@ -2,7 +2,7 @@
 
 ### Design
 
-For my first cycle it is important for me to create the groundwork of my project to build from. Therefore, in this cycle I will be setting up a basic project using Kaboom.js. This will feature the ground of the game, where the player will spawn. This ground boundary will eventually have the boing rings on.
+For my first cycle it is important for me to create the groundwork of my project to build from. Therefore, in this cycle I will be setting up a basic project using Kaboom.js. This will feature the ground of the game, where the player will spawn. This ground boundary will eventually have the boxing rings on.
 
 Using Kaboom.js which is on Repl, I aimed to complete 4 different objectives in this cycle. These objectives were to give myself a groundwork to build my project from.&#x20;
 

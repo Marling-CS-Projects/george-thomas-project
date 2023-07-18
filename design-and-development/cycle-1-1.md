@@ -2,7 +2,7 @@
 
 ### Design
 
-In the second cycle, I am to further develop my map and create the boxing. This will the allow my project to properly expand. What I mean by that is multiple areas of the game can be developed as a result of the map being completed. These things include: controls and player movement, enemy spawn and movement, combat, and more.
+In the second cycle, I want to further develop my map and create the boxing. This will the allow my project to properly expand. What I mean by that is multiple areas of the game can be developed as a result of the map being completed. These things include: controls and player movement, enemy spawn and movement, combat, and more.
 
 ### Objectives
 
