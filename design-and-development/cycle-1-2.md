@@ -72,30 +72,27 @@ player.onPhysicsResolve(() => {
 })
 ```
 
+I had to make changes from the original gravity that I had of 2400 to 1500. This is because I wanted my jumping to be more realistic. I wanted a more realistic feel as the player jumps into the boxing ring, not floating into it.
 
+```javascript
+setGravity(1500);
+```
+
+Movement is a crucial part of my game so it has been great to complete it. This allows me to develop at more in the future. Player movement can lead to player combat, to AI movement, to AI combat and to eventually the final battle in the game.
 
 ### Challenges
 
-My first big challenge of the development for my project was familiarizing myself with how to use Kaboom.js through Repl. I had no past experience of coding using kaboom on Repl. This meant that I had to do some practice and watch some quick tutorials to get my head around the online library.
+A challenge that I faced in this cycle was deciding on the gravity and the speed of the player. The gravity was very important to change in this cycle because before the change, the player would near enough float into the boxing rings, jumping well over the temporary 'ropes'. The speed was also an important decision to make because it plays a massive role in the combat of the game which is the main part of it. After some trials with different speeds. The specific speed of 480 in repl library worked out the best. As a result, the player does not look completely unrealistic when moving.&#x20;
 
 ## Testing
 
-Evidence for testing
-
 ### Tests
 
-<table><thead><tr><th width="87">Test</th><th width="127">Instructions</th><th width="223">What I expect</th><th width="208">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run code</td><td>Player spawns in the bottom left hand side of the screen slightly above the ground</td><td>As expected</td><td>Pass</td></tr><tr><td>2</td><td>Run code again</td><td>Map flour to load and be the whole length of the screen</td><td>As expected</td><td>Pass</td></tr><tr><td>3</td><td>Run code after additions</td><td>Player spawns and lands on new boundary </td><td>Player spawns in correct spot. However, player does not fall to the floor and land</td><td>Fail</td></tr><tr><td>4</td><td>Run code with fixed gravity</td><td>Player spawns and lands on the boundary</td><td>As expected - the player falls, lands and does not go through the boundary</td><td>Pass</td></tr></tbody></table>
+<table><thead><tr><th width="87">Test</th><th width="127">Instructions</th><th width="223">What I expect</th><th width="208">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run code</td><td>Player will move from inputs using the left and right arrow keys at set speed</td><td>As expected</td><td>Pass</td></tr><tr><td>2</td><td>Run code with changed constant speed</td><td>Player will move left/right at a decided speed of 480</td><td>As expected</td><td>Pass</td></tr><tr><td>3</td><td>Run code after addition of jumping</td><td>Player will jump after the space-bar is pressed and will land at a realistic velocity</td><td>Player jumps - however players gravity is too strong so floats in the air too much</td><td>Fail</td></tr><tr><td>4</td><td>Run code with fixed gravity</td><td>Player will jump after the space-bar is pressed and will land at a realistic velocity</td><td>As expected</td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+Enter Video that was made for movement
 
-This image above displays what my map looks like on spawn using Kaboom.js sprites. This therefore completes my objective:
-
-* [x] Create map design for the start of the game and where the player spawns
-
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
-
-This image above shows that the gravity has been implement and the player falls from spawn point to land on the ground.
-
-* [x] Implement gravity
+*
+*
