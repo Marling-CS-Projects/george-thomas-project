@@ -85,13 +85,13 @@ Evidence for testing
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 This image above displays what my map looks like on spawn using Kaboom.js sprites. This therefore completes my objective:
 
 * [x] Create map design for the start of the game and where the player spawns
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 This image above shows that the gravity has been implement and the player falls from spawn point to land on the ground.
 

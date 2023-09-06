@@ -17,7 +17,7 @@ Non-functional aspects: As the map develops, keep it being easy to understand an
 
 | Variable Name | Use                      |
 | ------------- | ------------------------ |
-| const ring    | creates the boxing rings |
+| const level   | creates the boxing rings |
 
 ### Pseudocode
 
@@ -72,15 +72,15 @@ My challenge with this task is deciding to carry on with the flour that I have g
 
 This first picture shows what the first ring looks like from spawn.
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 This picture shows the boxing ring changes:
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 This image below shows the full boxing ring from the temporary spawn point:
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 * [x] Create boxing rings
 * [x] Extend map

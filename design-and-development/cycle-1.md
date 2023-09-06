@@ -36,7 +36,7 @@ import kaboom
 
 ### Outcome
 
-This cycle has created the map floor for my game, which has enabled me to spawn my player on it. The graphics however, are still a work in progress as the floor is plain white and the player is the "bean" which is a premade sprite from kaboom.js. I split this cycle's code into 3 small and simple sections.
+This cycle has created the map floor for my game, which has enabled me to spawn my player on it. The graphics, however, are still a work in progress as the floor is plain white and the player is the "bean" which is a premade sprite from kaboom.js. I split this cycle's code into 3 small and simple sections.
 
 ```javascript
 import kaboom from "kaboom"
@@ -51,7 +51,7 @@ loadSprite("bean", "/sprites/bean.png"); // The player
 
 This section above starts the game and loads the player icon. In this case it is the "bean".
 
-<pre class="language-javascript"><code class="lang-javascript"><strong>setGravity(2400);
+<pre class="language-javascript"><code class="lang-javascript"><strong>setGravity(3200);
 </strong>
 const player = add([
   sprite("bean"),
@@ -73,11 +73,11 @@ This section above determines the spawn location and the gravity that the player
 ])
 </code></pre>
 
-This final section creates the map floor. Currently in just plain white.
+This final section creates the map floor, currently in plain white.
 
 ### Challenges
 
-My first big challenge of the development for my project was familiarizing myself with how to use Kaboom.js through Repl. I had no past experience of coding using kaboom on Repl. This meant that I had to do some practice and watch some quick tutorials to get my head around the online library.
+My first big challenge in the development of my project was familiarizing myself with how to use Kaboom.js through Repl. I had no past experience of coding using kaboom on Repl. This meant that I had to do some practice and watch some quick tutorials to get my head around the online library.
 
 ## Testing
 
@@ -89,14 +89,14 @@ Evidence for testing
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
-This image above displays what my map looks like on spawn using Kaboom.js sprites. This therefore completes my objective:
+The image above displays what my map looks like on spawn using Kaboom.js sprites. This therefore completes my objective:
 
-* [x] Create map design for the start of the game and where the player spawns
+* [x] Create a map design for the start of the game and where the player spawns
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
-This image above shows that the gravity has been implement and the player falls from spawn point to land on the ground.
+This image above shows that gravity has been implemented and the player falls from the spawn point to land on the ground.
 
 * [x] Implement gravity

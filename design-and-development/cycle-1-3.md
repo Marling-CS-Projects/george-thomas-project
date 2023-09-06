@@ -2,24 +2,30 @@
 
 ### Design
 
+In this cycle, I will be developing the map. Firstly I aim to implement a level system. This will be important for my game and it will take it to the next level. Once the player has spawned in the first level, the player will have to enter the first boxing ring to take on the first AI opponent. After the first opponent is defeated, the player will exit the boxing ring and enter a portal to the next level. The portal design will be developed in future but is currently a kaboom.js design. The player will then be taken to the next level and this process will be repeated.
 
+Additionally, I aim for each level to have a different design, this will make the game far more interesting.
+
+I also will be adding a background colour change, adding a plain coloured background.
 
 ### Objectives
 
-* [x] Extend map
-* [x] Create boxing rings
+* [x] Implement level system through portals
+* [x] Improve the design of the levels
+* [x] Add more levels with unique designs
+* [x] Add background colour
 
 ### Usability Features
 
-Non-functional aspects: As the map develops, keep it being easy to understand and traverse for players.
+Non-functional aspects: The game will become far more developed once there are more levels which are all different.
 
 ### Key Variables
 
-| Variable Name | Use |
-| ------------- | --- |
-|               |     |
-|               |     |
-|               |     |
+| Variable Name          | Use                             |
+| ---------------------- | ------------------------------- |
+| const level = addLevel | allows for multiple levels      |
+| const levelConf        | defining the symbols            |
+| const LEVELS           | The actual layout of the levels |
 
 ### Pseudocode
 
@@ -32,48 +38,178 @@ Non-functional aspects: As the map develops, keep it being easy to understand an
 
 ### Outcome
 
-This cycle has created the map floor for my game, which has enabled me to spawn my player on it. The graphics however, are still a work in progress as the floor is plain white and the player is the "bean" which is a premade sprite from kaboom.js. I split this cycle's code into 3 small and simple sections.
+Defining new symbols and making changes to older ones.
 
 ```javascript
-import kaboom from "kaboom"
-import "kaboom/global"
-
-kaboom();
-
-// Load asset
-
-loadSprite("bean", "/sprites/bean.png"); // The player
+const levelConf = {
+	tileWidth: 64,
+	tileHeight: 64,
+	tiles: {
+		"=": () => [
+			sprite("grass"),
+			area(),
+			body({ isStatic: true }),
+			anchor("bot"),
+			offscreen({ hide: true }),
+			"platform",
+		],
+		"-": () => [
+			sprite("steel"),
+			area(),
+			body({ isStatic: true }),
+			offscreen({ hide: true }),
+			anchor("bot"),
+		],
+		"0": () => [
+			sprite("bag"),
+			area(),
+			body({ isStatic: true }),
+			offscreen({ hide: true }),
+			anchor("bot"),
+		],
+		"$": () => [
+			sprite("coin"),
+			area(),
+			pos(0, -9),
+			anchor("bot"),
+			offscreen({ hide: true }),
+			"coin",
+		],
+		"^": () => [
+			sprite("spike"),
+			area(),
+			body({ isStatic: true }),
+			anchor("bot"),
+			offscreen({ hide: true }),
+			"danger",
+		],
+		"#": () => [
+			sprite("apple"),
+			area(),
+			anchor("bot"),
+			body(),
+			offscreen({ hide: true }),
+			"apple",
+		],
+		">": () => [
+			sprite("ghosty"),
+			area(),
+			anchor("bot"),
+			body(),
+			patrol(),
+			offscreen({ hide: true }),
+			"enemy",
+		],
+		"@": () => [
+			sprite("portal"),
+			area({ scale: 0.5 }),
+			anchor("bot"),
+			pos(0, -12),
+			offscreen({ hide: true }),
+			"portal",
+		],
+	},
+}
 ```
 
-This section above starts the game and loads the player icon. In this case it is the "bean".
+This code shows the improved layout of the first level and the 4 new levels of the game all with unique layouts. The symbols indicate where everything goes.
 
-<pre class="language-javascript"><code class="lang-javascript"><strong>setGravity(2400);
-</strong>
-const player = add([
-  sprite("bean"),
-  pos(120, 80),
-  area(),
-  body(),
-  "player"
-])
+```javascript
+const LEVELS = [
+	[
+		"                                 ",
+		"                                 ",
+		"                                 ",
+		"                                 ",
+		"            -              -     ",
+		"            -      >       -  $ @",
+		"============----------------=====",
+	],
+	[
+		"                                            ",
+		"                                            ",
+		"                                            ",
+		"            -              -                ",
+		"            -              -                ",
+		"           --         >    -     $        @ ",
+		"============----------------================",
+	],
+	[
+		"                                                   ",
+		"                                     $             ",
+		"                                    ---            ",
+		"            -              -                       ",
+		"           --              -                       ",
+		"          ---           >  -                      @",
+		"============----------------=====  ===  ===  ===  =",
+	],
+    [
+		"                                                 ---------",
+		"                                                --       @",
+		"                                               --     ----",
+		"            -              -                  --     --   ",
+		"           --              -            -------     --    ",
+		"          ---           >  -              $        --     ",
+		"============----------------============------------      ",
+	],
+	[
+		"--------------------------------------------",
+		"    -                                       ",
+		"--- -                                       ",
+		"  - -           -              -            ",
+		"  - -          --              -            ",
+		"  -           ---           >  -     $   @  ",
+		"==---==========-----------------============",
+	],
+    
+]
+```
+
+Code to move the player to the next level once the player collides with the portal
+
+```javascript
+	player.onCollide("portal", () => {
+		if (levelId + 1 < LEVELS.length) {
+			go("game", {
+				levelId: levelId + 1,
+
+			})
+		} else {
+			go("win")
+		}
+	})
+```
+
+Code that links the scenery to the level itself. Also the position of the player when teleported to the next level.
+
+```javascript
+scene("game", ({ levelId, coins } = { levelId: 0, coins: 0 }) => {
+
+	// add level to scene
+	const level = addLevel(LEVELS[levelId ?? 0], levelConf)
+
+	// define player object
+	const player = add([
+		sprite("bean"),
+		pos(0, 0),
+		area(),
+		scale(1),
+		body(),
+		big(),
+		anchor("bot"),
+	])
+```
+
+Code for dark grey background
+
+<pre class="language-javascript"><code class="lang-javascript"><strong>kaboom({
+</strong>	background: [90, 90, 90],
+})
 </code></pre>
-
-This section above determines the spawn location and the gravity that the player experiences. This will be crucial for movement in future cycles.
-
-<pre class="language-javascript"><code class="lang-javascript"><strong>add([
-</strong>    rect(width(), 48),
-    outline(4),
-    area(),
-    pos(0, height() - 25),
-    body({ isStatic: true})
-])
-</code></pre>
-
-This final section creates the map floor. Currently in just plain white.
 
 ### Challenges
 
-My first big challenge of the development for my project was familiarizing myself with how to use Kaboom.js through Repl. I had no past experience of coding using kaboom on Repl. This meant that I had to do some practice and watch some quick tutorials to get my head around the online library.
+One challenge that I came across during this cycle was the white border that I had previously made. I have now removed it due to multiple reasons; Firstly, the white border was a lot harder to adjust and extend which ended up being too time-consuming. Secondly, the white border was not the smartest idea for my game as I wanted to use the symbol code to indicate the layout of levels. Thirdly, I wasn't the biggest fan of how it looked, especially with how the boxing rings looked on top of it. As a result, the number of symbols used has increased and the design of the levels looks far more professional.
 
 ## Testing
 
@@ -81,18 +217,36 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="87">Test</th><th width="127">Instructions</th><th width="223">What I expect</th><th width="208">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run code</td><td>Player spawns in the bottom left hand side of the screen slightly above the ground</td><td>As expected</td><td>Pass</td></tr><tr><td>2</td><td>Run code again</td><td>Map flour to load and be the whole length of the screen</td><td>As expected</td><td>Pass</td></tr><tr><td>3</td><td>Run code after additions</td><td>Player spawns and lands on new boundary </td><td>Player spawns in correct spot. However, player does not fall to the floor and land</td><td>Fail</td></tr><tr><td>4</td><td>Run code with fixed gravity</td><td>Player spawns and lands on the boundary</td><td>As expected - the player falls, lands and does not go through the boundary</td><td>Pass</td></tr></tbody></table>
+<table><thead><tr><th width="87">Test</th><th width="127">Instructions</th><th width="223">What I expect</th><th width="208">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run code</td><td>New level design to run well, not crash, and have everything that is intended to be in. For example the new map flour</td><td>Player spawns on new map which looks correct</td><td>Pass</td></tr><tr><td>2</td><td>Run code with new background colour</td><td>Dark grey backround colour applied</td><td>Dark grey backround colour applied</td><td>Pass</td></tr><tr><td>3</td><td>Run code and move around to test portals and new levels</td><td>Player collides with portal correctly and spawns to the other level correctly</td><td>Player walks into the portal but spawns underneath the level</td><td>Fail</td></tr><tr><td>4</td><td>Run code after correcting the false spawn point though the portals</td><td>Player walks through portal and spawns above ground</td><td>Player collides with portal and spawns above the ground.</td><td>Pass</td></tr><tr><td>5</td><td>Check all the new levels by traversing the map</td><td>All levels look well formatted and all have the unique designs</td><td>All levels are there, however the look of some of them are not that good. </td><td>Fail</td></tr><tr><td>6</td><td>Change the design on some of the levels</td><td>All levels look well formatted and all have the unique designs</td><td>Levels all look alot better.</td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
 
+Level one design with the portal at the end
+
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-This image above displays what my map looks like on spawn using Kaboom.js sprites. This therefore completes my objective:
+Level two:
 
-* [x] Create map design for the start of the game and where the player spawns
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+Level 3:
 
 <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-This image above shows that the gravity has been implement and the player falls from spawn point to land on the ground.
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
-* [x] Implement gravity
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+Level 4:
+
+<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+Level 5:
+
+<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
