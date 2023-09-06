@@ -21,6 +21,10 @@
 * [2.2.3 Cycle 3](design-and-development/cycle-1-2.md)
 * [2.2.4 Cycle 4](design-and-development/cycle-1-3.md)
 * [2.2.5 Cycle 5](design-and-development/cycle-1-4.md)
+* [2.2.6 Cycle 6](design-and-development/cycle-1-5.md)
+* [2.2.7 Cycle 7](design-and-development/cycle-1-6.md)
+* [2.2.8 Cycle 8](design-and-development/cycle-1-7.md)
+* [2.2.9 Cycle 9](design-and-development/cycle-1-8.md)
 * [Full Code](design-and-development/full-code.md)
 
 ## 3 Testing <a href="#testing" id="testing"></a>

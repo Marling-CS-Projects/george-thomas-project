@@ -1,4 +1,4 @@
-# 2.2.5 Cycle 5
+# 2.2.8 Cycle 8
 
 ### Design
 
@@ -15,11 +15,11 @@ Non-functional aspects: Enemies that move in a way that is not too hard to defea
 
 ### Key Variables
 
-| Variable Name                              | Use |
-| ------------------------------------------ | --- |
-| const LEVELS                               | ..  |
-| loadSprite("enemy", "/sprites/ghosty.png") | ..  |
-| loadSprite("boss", "/sprites/bag.png")     | ..  |
+| Variable Name | Use |
+| ------------- | --- |
+|               |     |
+|               |     |
+|               |     |
 
 ### Pseudocode
 
@@ -117,18 +117,11 @@ Defining symbols and setting them as enemies.
 }
 ```
 
+
+
 ```javascript
 	player.onCollide("danger", () => {
 		go("lose")
-```
-
-```javascript
-	player.onCollide("enemy", (e, col) => {
-		if (!col.isBottom()) {
-			go("lose")
-
-		}
-	})
 ```
 
 ### Challenges
@@ -145,8 +138,3 @@ Evidence for testing
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
