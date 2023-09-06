@@ -2,12 +2,13 @@
 
 ### Design
 
-In this cycle, I will be adding enemies and their movement. It is important that they spawn in the correct place, that being inside of the ring, and it is important that they move around the ring. I will use more symbols and temporary designs from kaboom.js.
+In this cycle, combat will be developed, a health bar will be added and the enemies/player will do damage. Additionally, the final boss will be developed so that it has more health is harder to defeat and does more damage.
 
 ### Objectives
 
-* [x] Spawn in enemies
-* [x] Enable movement for enemies
+* [x] Enemy combat
+* [x] Healthbar
+* [x] Final boss completion
 
 ### Usability Features
 

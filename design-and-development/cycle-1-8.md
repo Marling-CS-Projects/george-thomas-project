@@ -2,7 +2,7 @@
 
 ### Design
 
-In this cycle, I will be adding enemies and their movement. It is important that they spawn in the correct place, that being inside of the ring, and it is important that they move around the ring. I will use more symbols and temporary designs from kaboom.js.
+In this cycle, the HUD will be designed and fully prepared. The main menu will be designed. A completion design will be added.
 
 ### Objectives
 

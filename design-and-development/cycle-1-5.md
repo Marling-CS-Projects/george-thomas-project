@@ -2,14 +2,16 @@
 
 ### Design
 
+In this cycle, I will implement powerups. And a "win record collector". By this I mean an object that the player collects and it will count as the players boxing record every time they beat a level. They will be collected at the end of each level just before the portal. The boxing record will appear in the top left of the screen. The object at the moment will be kaboom.js design temporarily.
+
 
 
 {% file src="../.gitbook/assets/2023-09-06 18-43-58.mkv" %}
 
 ### Objectives
 
-* [x] Spawn in enemies
-* [x] Enable movement for enemies
+* [x] Boxing record
+* [x] New powerups
 
 ### Usability Features
 
