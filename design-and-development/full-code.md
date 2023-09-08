@@ -99,7 +99,7 @@ loadSprite("coin", "/sprites/coin.png")
 setGravity(3200)
 
 // custom component controlling enemy patrol movement
-function patrol(speed = 60, dir = 1) {
+function patrol(speed = 150, dir = 1) {
 	return {
 		id: "patrol",
 		require: [ "pos", "area" ],
@@ -165,7 +165,7 @@ const LEVELS = [
 		"                                 ",
 		"                                 ",
 		"            -              -     ",
-		"            -              -    @",
+		"            -      >       -    @",
 		"============----------------=====",
 	],
 	[
@@ -174,7 +174,7 @@ const LEVELS = [
 		"                                            ",
 		"            -              -                ",
 		"            -              -                ",
-		"           --              -              @ ",
+		"           --         >    -              @ ",
 		"============----------------================",
 	],
 	[
@@ -183,7 +183,7 @@ const LEVELS = [
 		"                                    ---            ",
 		"            -              -                       ",
 		"           --              -                       ",
-		"          ---              -                      @",
+		"          ---           >  -                      @",
 		"============----------------=====  ===  ===  ===  =",
 	],
     [
@@ -192,7 +192,7 @@ const LEVELS = [
 		"                                               --     ----",
 		"            -              -                  --     --   ",
 		"           --              -            -------     --    ",
-		"          ---              -                       --     ",
+		"          ---           >  -                       --     ",
 		"============----------------============------------      ",
 	],
 	[
@@ -201,7 +201,7 @@ const LEVELS = [
 		"--- -                                       ",
 		"  - -           -              -            ",
 		"  - -          --              -            ",
-		"  -           ---              -         @  ",
+		"  -           ---           0  -         @  ",
 		"==---==========-----------------============",
 	],
     
@@ -318,7 +318,7 @@ scene("game", ({ levelId, coins } = { levelId: 0, coins: 0 }) => {
 	// if player onCollide with any obj with "danger" tag, lose
 	player.onCollide("danger", () => {
 		go("lose")
-		// play("hit") 000000000
+
 	})
 
 	player.onCollide("portal", () => {
@@ -338,7 +338,6 @@ scene("game", ({ levelId, coins } = { levelId: 0, coins: 0 }) => {
 			player.jump(JUMP_FORCE * 1.5)
 			destroy(l)
 			addKaboom(player.pos)
-			play("powerup")
 		}
 	})
 
@@ -346,7 +345,7 @@ scene("game", ({ levelId, coins } = { levelId: 0, coins: 0 }) => {
 		// if it's not from the top, die
 		if (!col.isBottom()) {
 			go("lose")
-			play("hit")
+
 		}
 	})
 
@@ -443,6 +442,7 @@ scene("lose", () => {
 scene("win", () => {
 	add([
 		text("You Win"),
+
 	])
 	onKeyPress(() => go("game"))
 })
