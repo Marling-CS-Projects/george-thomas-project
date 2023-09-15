@@ -92,7 +92,7 @@ const LEVELS = [
 ]
 ```
 
-Defining symbols and setting them as enemies.
+Declaring what each symbol represents. The "0" represents the spawn for the "boss" which is the final enemy. The ">" is the normal enemy.
 
 ```javascript
 		"0": () => [
@@ -117,10 +117,7 @@ Defining symbols and setting them as enemies.
 }
 ```
 
-```javascript
-	player.onCollide("danger", () => {
-		go("lose")
-```
+
 
 ```javascript
 	player.onCollide("enemy", (e, col) => {
