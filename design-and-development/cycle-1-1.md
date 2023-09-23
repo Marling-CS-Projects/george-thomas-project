@@ -22,7 +22,24 @@ Non-functional aspects: As the map develops, keep it being easy to understand an
 ### Pseudocode
 
 ```
-DO THIS
+Create a level named "ring" with the following layout:
+  - Row 1: " =              ="
+  - Row 2: " =              ="
+  - Row 3: "================="
+
+Level Configuration:
+  - Tile width: 64
+  - Tile height: 64
+  - Position: (850, 785)
+
+Define tile types:
+  - "=" tile:
+    - Display a "steel" sprite
+    - Define a collision area
+    - Create a static physics body
+    - Anchor it at the bottom
+
+
 ```
 
 ## Development
@@ -60,7 +77,7 @@ const ring = addLevel([
 
 ### Challenges
 
-My challenge with this task is deciding to carry on with the flour that I have go so far. The plain white block that I currently have has turned out to be quite problematic. I say this because, I am having difficulties extending it. It is not impossible, however quite time consuming.
+My challenge with this task is deciding to carry on with the flour that I have go so far. The plain white block that I currently have has turned out to be quite problematic. I say this because, I am having difficulties extending it. It is not impossible, however quite time-consuming.
 
 ## Testing
 
@@ -78,7 +95,7 @@ This picture shows the boxing ring changes:
 
 <figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
-This image below shows the full boxing ring from the temporary spawn point:
+The image below shows the full boxing ring from the temporary spawn point:
 
 <figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 

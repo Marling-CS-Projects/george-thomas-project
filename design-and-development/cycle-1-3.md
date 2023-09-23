@@ -6,14 +6,11 @@ In this cycle, I will be developing the map. Firstly I aim to implement a level 
 
 Additionally, I aim for each level to have a different design, this will make the game far more interesting.
 
-I also will be adding a background colour change, adding a plain coloured background.
-
 ### Objectives
 
 * [x] Implement level system through portals
 * [x] Improve the design of the levels
 * [x] Add more levels with unique designs
-* [x] Add background colour
 
 ### Usability Features
 
@@ -160,13 +157,6 @@ scene("game", ({ levelId, coins } = { levelId: 0, coins: 0 }) => {
 	])
 ```
 
-Code for dark grey background
-
-<pre class="language-javascript"><code class="lang-javascript"><strong>kaboom({
-</strong>	background: [90, 90, 90],
-})
-</code></pre>
-
 ### Challenges
 
 One challenge that I came across during this cycle was the white border that I had previously made. I have now removed it due to multiple reasons; Firstly, the white border was a lot harder to adjust and extend which ended up being too time-consuming. Secondly, the white border was not the smartest idea for my game as I wanted to use the symbol code to indicate the layout of levels. Thirdly, I wasn't the biggest fan of how it looked, especially with how the boxing rings looked on top of it. As a result, the number of symbols used has increased and the design of the levels looks far more professional.
@@ -177,7 +167,7 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="87">Test</th><th width="127">Instructions</th><th width="223">What I expect</th><th width="208">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run code</td><td>New level design to run well, not crash, and have everything that is intended to be in. For example the new map flour</td><td>Player spawns on new map which looks correct</td><td>Pass</td></tr><tr><td>2</td><td>Run code with new background colour</td><td>Dark grey backround colour applied</td><td>Dark grey backround colour applied</td><td>Pass</td></tr><tr><td>3</td><td>Run code and move around to test portals and new levels</td><td>Player collides with portal correctly and spawns to the other level correctly</td><td>Player walks into the portal but spawns underneath the level</td><td>Fail</td></tr><tr><td>4</td><td>Run code after correcting the false spawn point though the portals</td><td>Player walks through portal and spawns above ground</td><td>Player collides with portal and spawns above the ground.</td><td>Pass</td></tr><tr><td>5</td><td>Check all the new levels by traversing the map</td><td>All levels look well formatted and all have the unique designs</td><td>All levels are there, however the look of some of them are not that good. </td><td>Fail</td></tr><tr><td>6</td><td>Change the design on some of the levels</td><td>All levels look well formatted and all have the unique designs</td><td>Levels all look alot better.</td><td>Pass</td></tr></tbody></table>
+<table><thead><tr><th width="87">Test</th><th width="127">Instructions</th><th width="223">What I expect</th><th width="208">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run code</td><td>New level design to run well, not crash, and have everything that is intended to be in. For example the new map flour</td><td>Player spawns on new map which looks correct</td><td>Pass</td></tr><tr><td>2</td><td>Run code and move around to test portals and new levels</td><td>Player collides with portal correctly and spawns to the other level correctly</td><td>Player walks into the portal but spawns underneath the level</td><td>Fail</td></tr><tr><td>3</td><td>Run code after correcting the false spawn point though the portals</td><td>Player walks through portal and spawns above ground</td><td>Player collides with portal and spawns above the ground.</td><td>Pass</td></tr><tr><td>4</td><td>Check all the new levels by traversing the map</td><td>All levels look well formatted and all have the unique designs</td><td>All levels are there, however the look of some of them are not that good. </td><td>Fail</td></tr><tr><td>5</td><td>Change the design on some of the levels</td><td>All levels look well formatted and all have the unique designs</td><td>Levels all look alot better.</td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
 

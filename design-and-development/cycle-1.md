@@ -28,7 +28,25 @@ Non-functional aspects: Make the map include graphics that are user-friendly for
 ### Pseudocode
 
 ```
-import kaboom
+Initialize Kaboom library
+
+Load sprite "bean" from "/sprites/bean.png"
+
+Set gravity to 3200
+
+Create a player entity with the following properties:
+  - Sprite: "bean"
+  - Position: (120, 80)
+  - Collision area
+  - Physics body
+  - Tag: "player"
+
+Create a ground entity with the following properties:
+  - Rectangle shape with a width equal to the screen width and a height of 48
+  - Outline with a thickness of 4
+  - Collision area
+  - Position at the bottom of the screen (0, screen height - 25)
+  - Static physics body
 
 ```
 
@@ -36,7 +54,7 @@ import kaboom
 
 ### Outcome
 
-This cycle has created the map floor for my game, which has enabled me to spawn my player on it. The graphics, however, are still a work in progress as the floor is plain white and the player is the "bean" which is a premade sprite from kaboom.js. I split this cycle's code into 3 small and simple sections.
+This cycle has created the map floor for my game, which has enabled me to spawn my player on it. The graphics, however, are still a work in progress as the floor is plain white and the player is the "bean, " a premade sprite from kaboom.js. I split this cycle's code into 3 small and simple sections.
 
 ```javascript
 import kaboom from "kaboom"
@@ -49,7 +67,7 @@ kaboom();
 loadSprite("bean", "/sprites/bean.png"); // The player
 ```
 
-This section above starts the game and loads the player icon. In this case it is the "bean".
+This section above starts the game and loads the player icon. In this case, it is the "bean".
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>setGravity(3200);
 </strong>
