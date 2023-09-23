@@ -4,6 +4,8 @@
 
 In this cycle, I will be adding enemies and their movement. It is important that they spawn in the correct place, that being inside of the ring, and it is important that they move around the ring. I will use more symbols and temporary designs from kaboom.js.
 
+The enemy will spawn at the opposite end of the boxing ring and will patrol the boxing ring. The same will apply to the boss.
+
 ### Objectives
 
 * [x] Spawn in enemies
@@ -11,20 +13,57 @@ In this cycle, I will be adding enemies and their movement. It is important that
 
 ### Usability Features
 
-Non-functional aspects: Enemies that move in a way that is not too hard to defeat but is also not too easy for players.
+Non-functional aspects: I want my enemies to not be too challenging for the player to defeat. After all, the PEGI rating is low to allow young children to play if they desire. With that being said, the enemy will move at a speed which is not too fast nor too slow.
 
 ### Key Variables
 
-| Variable Name                              | Use |
-| ------------------------------------------ | --- |
-| const LEVELS                               | ..  |
-| loadSprite("enemy", "/sprites/ghosty.png") | ..  |
-| loadSprite("boss", "/sprites/bag.png")     | ..  |
+| Variable Name                               | Use                                                                                                                                                                                                                      |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| LEVELS                                      | This is an array of level layouts, where each level is represented as an array of strings. It defines the layout of the game levels.                                                                                     |
+| "0"                                         | This is a symbol used in the level layout strings, representing the spawn point for the "boss." When this symbol is encountered in the level layout, it creates a boss entity.                                           |
+| ">"                                         | This is a symbol used in the level layout strings, representing a normal enemy. When this symbol is encountered in the level layout, it creates a standard enemy entity.                                                 |
+| sprite("boss")                              | This defines the sprite for the boss entity, using the image "boss.png."                                                                                                                                                 |
+| sprite("ghosty")                            | This defines the sprite for the standard enemy entity, using the image "ghosty.png."                                                                                                                                     |
+| area()                                      | This creates a collision area for the enemy entities.                                                                                                                                                                    |
+| anchor("bot")                               | This sets the anchor point of the enemy entities to the bottom.                                                                                                                                                          |
+| body()                                      | This creates a physics body for the enemy entities.                                                                                                                                                                      |
+| patrol()                                    | This represents a function or component that defines patrol behaviour for the enemies.                                                                                                                                   |
+| offscreen({ hide: true })                   | This likely defines an offscreen behavior for the entities, hiding them when they go offscreen.                                                                                                                          |
+| "enemy"                                     | This is a tag or identifier for the enemy entities, allowing for collision detection with player entities.                                                                                                               |
+| player.onCollide("enemy", (e, col) => {...} | This sets up a collision event handler for the player entity when it collides with an entity tagged as "enemy." If the collision is not on the bottom side of the player, it likely triggers a game over state ("lose"). |
 
 ### Pseudocode
 
 ```
+Load sprite "enemy" from "/sprites/ghosty.png"
+Load sprite "boss" from "/sprites/bag.png"
 
+Define LEVELS as an array of level layouts, where each level is represented as an array of strings.
+
+Define behaviours for specific symbols used in the level layouts:
+- When encountering "0" in the level layout:
+  - Create an entity with the following attributes:
+    - Display the "boss" sprite
+    - Define a collision area
+    - Anchor at the bottom
+    - Create a physics body
+    - Apply a patrol behaviour
+    - Set offscreen behaviour to hide
+    - Tag the entity as "enemy"
+
+- When encountering ">" in the level layout:
+  - Create an entity with the following attributes:
+    - Display the "ghosty" sprite
+    - Define a collision area
+    - Anchor at the bottom
+    - Create a physics body
+    - Apply a patrol behaviour
+    - Set offscreen behaviour to hide
+    - Tag the entity as "enemy"
+
+Define an event handler for when the player collides with entities tagged as "enemy":
+  - If the collision is not on the bottom side of the player:
+    - Transition to the "lose" state or perform a game-over action
 
 ```
 

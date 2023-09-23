@@ -26,10 +26,78 @@ Non-functional aspects: The game will become far more developed once there are m
 
 ### Pseudocode
 
-```
+<pre><code>Define the level configuration:
+  - Tile width: 64
+  - Tile height: 64
+  - Define tile types:
+    - "=" tile:
+      - Display "grass" sprite
+      - Create a collision area
+      - Create a static physics body
+      - Anchor at the bottom
+      - Set offscreen behavior to hide
+      - Tag as "platform"
+    - "-" tile:
+      - Display "steel" sprite
+      - Create a collision area
+      - Create a static physics body
+      - Set offscreen behavior to hide
+      - Anchor at the bottom
+    - "@" tile:
+      - Display "portal" sprite
+      - Create a collision area with a scale of 0.5
+      - Anchor at the bottom
+      - Set position to (0, -12)
+      - Set offscreen behavior to hide
+      - Tag as "portal"
+      
+Define LEVELS as an array of level layouts, where each level is represented as an array of strings.
 
+Level 1 layout:
+  - Row 1:  "                                 ",
+  - Row 2:  "                                 ",
+  - Row 3:  "                                 ",
+  - Row 4:  "                                 ",
+  - Row 5:  "            -              -     ",
+  - Row 6:  "            -              -    @",
+  - Row 7:  "============----------------=====",
 
-```
+Level 2 layout:
+  - Row 1:  "                                        ",
+  - Row 2:  "                                        ",
+  - Row 3:  "                                        ",
+  - Row 4:  "            -              -            ",
+  - Row 5:  "            -              -            ",
+  - Row 6:  "           --              -         @  ",
+  - Row 7:  "============----------------============",
+
+Level 3 layout:
+  - Row 1:  "                                                   ",
+  - Row 2:  "                                                   ",
+  - Row 3:  "                                    ---            ",
+  - Row 4:  "            -              -                       ",
+<strong>  - Row 5:  "           --              -                       ",
+</strong><strong>  - Row 6:  "          ---              -                      @",
+</strong>  - Row 7:  "============----------------=====  ===  ===  ===  =",
+
+Level 4 layout:
+  - Row 1:  "                                                 ---------",
+  - Row 2:  "                                                --       @",
+  - Row 3:  "                                               --     ----",
+  - Row 4:  "            -              -                  --     --   ",
+  - Row 5:  "           --              -            -------     --    ",
+  - Row 6:  "          ---              -                       --     ", 
+  - Row 7:  "============----------------============------------      ",
+
+Level 5 layout:
+  - Row 1:  "--------------------------------------------",
+  - Row 2:  "    -                                       ",
+<strong>  - Row 3:  "--- -                                       ",
+</strong>  - Row 4:  "  - -           -              -            ",
+  - Row 5:  "  - -          --              -            ",
+  - Row 6:  "  -           ---              -         @  ",
+<strong>  - Row 7:  "==---==========-----------------============",
+</strong></code></pre>
 
 ## Development
 
@@ -200,3 +268,8 @@ Level 5:
 <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+
+Here is a video testing the new portals:\
+
+
+{% embed url="https://youtu.be/IkyDd--32sU" %}
