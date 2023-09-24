@@ -112,7 +112,9 @@ A challenge that I faced in this cycle was the speed. This was because speed was
 
 ### Evidence
 
-{% embed url="https://youtu.be/M0Dt87i19co" %}
+This short clip displays testing of the player's movement, including jumping, and the side-scrolling camera:
+
+{% embed url="https://youtu.be/2XcHmnbCc7o" %}
 
 * [x] Player movement
 * [x] Side-scrolling camera

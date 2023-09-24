@@ -268,8 +268,3 @@ Level 5:
 <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
-
-Here is a video testing the new portals:\
-
-
-{% embed url="https://youtu.be/IkyDd--32sU" %}

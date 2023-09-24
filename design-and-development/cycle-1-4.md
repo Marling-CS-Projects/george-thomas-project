@@ -190,7 +190,7 @@ function patrol(speed = 200, dir = 1) {
 
 ### Challenges
 
-One big challenge in this section was the enemy movement inside the ring. Originally, my code involved the enemy walking towards the player as they stepped into the boxing ring. However, there was a bug where the enemy would sometimes get caught on one of the flour pieces, which is shown in a clip from my [Cycle 4 testing video](cycle-1-3.md#evidence)
+One big challenge in this section was the enemy movement inside the ring. Originally, my code involved the enemy walking towards the player as they stepped into the boxing ring. However, there was a bug where the enemy would sometimes get caught on one of the flour pieces, which is shown in this short clip:
 
 {% embed url="https://youtu.be/ZUvD5ok_38g" %}
 
@@ -205,6 +205,12 @@ Evidence for testing
 <table><thead><tr><th width="87">Test</th><th width="127">Instructions</th><th width="223">What I expect</th><th width="208">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td></td><td></td><td></td><td>Pass</td></tr><tr><td>2</td><td></td><td></td><td></td><td>Pass</td></tr><tr><td>3</td><td></td><td></td><td></td><td>Fail</td></tr><tr><td>4</td><td></td><td></td><td></td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
+
+Here is a clip of testing the enemy's new movement:
+
+{% embed url="https://youtu.be/9KbVUXQlnAI" %}
+
+Here are screenshots to show the enemy's movement and the "lose" scene.
 
 <figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
