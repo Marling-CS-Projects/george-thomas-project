@@ -156,7 +156,7 @@ Declaring what each symbol represents. The "0" represents the spawn for the "bos
 }
 ```
 
-
+This is the code for the "lose" scene which displays if the player gets defeated or falls off the map.
 
 ```javascript
 	player.onCollide("enemy", (e, col) => {
@@ -167,9 +167,34 @@ Declaring what each symbol represents. The "0" represents the spawn for the "bos
 	})
 ```
 
+The code that defines my patrol function which allows my enemies to move horizontally back and forth. It uses a "speed" parameter to control the movement speed and reverses the direction when the enemy collides with the side of the boxing ring.
+
+```javascript
+function patrol(speed = 200, dir = 1) {
+    return {
+        id: "patrol",
+        require: ["pos", "area"],
+        add() {
+            this.on("collide", (obj, col) => {
+                if (col.isLeft() || col.isRight()) {
+                    dir = -dir
+                }
+            })
+        },
+        update() {
+            this.move(speed * dir, 0)
+        },
+    }
+}
+```
+
 ### Challenges
 
-One big challenge in this section was figuring out how to make the enemy walk towards the player inside of the ring. Therefore I have changed my plan slightly, the boss will be the one that walks towards the player, which will be developed in future.
+One big challenge in this section was the enemy movement inside the ring. Originally, my code involved the enemy walking towards the player as they stepped into the boxing ring. However, there was a bug where the enemy would sometimes get caught on one of the flour pieces, which is shown in a clip from my [Cycle 4 testing video](cycle-1-3.md#evidence)
+
+{% embed url="https://youtu.be/ZUvD5ok_38g" %}
+
+You can see from this clip that the enemy, which is displayed as "ghosty", inside of the boxing ring gets caught on the right side. As a result of this, I changed my code so that the enemy patrols the boxing ring rather than targeting the player, this worked as a fix for this bug.
 
 ## Testing
 
@@ -177,7 +202,7 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="87">Test</th><th width="127">Instructions</th><th width="223">What I expect</th><th width="208">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run code</td><td>Player spawns in the bottom left hand side of the screen slightly above the ground</td><td>As expected</td><td>Pass</td></tr><tr><td>2</td><td>Run code again</td><td>Map flour to load and be the whole length of the screen</td><td>As expected</td><td>Pass</td></tr><tr><td>3</td><td>Run code after additions</td><td>Player spawns and lands on new boundary </td><td>Player spawns in correct spot. However, player does not fall to the floor and land</td><td>Fail</td></tr><tr><td>4</td><td>Run code with fixed gravity</td><td>Player spawns and lands on the boundary</td><td>As expected - the player falls, lands and does not go through the boundary</td><td>Pass</td></tr></tbody></table>
+<table><thead><tr><th width="87">Test</th><th width="127">Instructions</th><th width="223">What I expect</th><th width="208">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td></td><td></td><td></td><td>Pass</td></tr><tr><td>2</td><td></td><td></td><td></td><td>Pass</td></tr><tr><td>3</td><td></td><td></td><td></td><td>Fail</td></tr><tr><td>4</td><td></td><td></td><td></td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
 

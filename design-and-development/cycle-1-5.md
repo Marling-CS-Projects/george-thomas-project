@@ -2,18 +2,12 @@
 
 ### Design
 
-In this cycle, I will implement powerups. And a "win record collector". By this I mean an object that the player collects and it will count as the players boxing record every time they beat a level. They will be collected at the end of each level just before the portal. The boxing record will appear in the top left of the screen.&#x20;
-
-The second power up will be a water bottle. This will&#x20;
-
-
-
-{% file src="../.gitbook/assets/2023-09-06 18-43-58.mkv" %}
+In this cycle, I will develop my boxing win record system. This will involve a boxing "belt" which will appear once the player has defeated the enemy.
 
 ### Objectives
 
 * [x] Boxing record
-* [x] New powerups
+* [x] New powerup
 
 ### Usability Features
 
