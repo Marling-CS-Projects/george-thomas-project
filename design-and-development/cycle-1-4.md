@@ -202,13 +202,13 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="87">Test</th><th width="127">Instructions</th><th width="223">What I expect</th><th width="208">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td></td><td></td><td></td><td>Pass</td></tr><tr><td>2</td><td></td><td></td><td></td><td>Pass</td></tr><tr><td>3</td><td></td><td></td><td></td><td>Fail</td></tr><tr><td>4</td><td></td><td></td><td></td><td>Pass</td></tr></tbody></table>
+<table><thead><tr><th width="87">Test</th><th width="148">Instructions</th><th width="223">What I expect</th><th width="208">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run code with new symbols representing enemies</td><td>Enemies spawn in the correct locations on each of the levels. </td><td>Upon test travelling the map, the enemies all spawn in their correct locations in the different boxing rings.</td><td>Pass</td></tr><tr><td>2</td><td>After adding the code for the enemy movement. Run the code and test that the enemies walk towards the player.</td><td>As the player enters the boxing ring, the enemy moves towards the player in attempt to defeat the player.</td><td>The enemys get caught on the sides of the boxing rings. Resulting in the enemies not walking towards the player and  rather getting stuck to a flour peice.</td><td>Fail</td></tr><tr><td>3</td><td>Adapt to the error, change the enemy movement code and run.</td><td>Enemies patrol back and fourth their individual boxing rings. Rather than walking towards the player so that the bug fixes.</td><td>The enemies correctly patrol the boxing ring with their new "patrol" function.</td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
 
 Here is a clip of testing the enemy's new movement:
 
-{% embed url="https://youtu.be/9KbVUXQlnAI" %}
+{% embed url="https://www.youtube.com/watch?v=9KbVUXQlnAI" %}
 
 Here are screenshots to show the enemy's movement and the "lose" scene.
 
