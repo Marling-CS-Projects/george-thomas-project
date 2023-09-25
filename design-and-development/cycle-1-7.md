@@ -2,17 +2,15 @@
 
 ### Design
 
-In this cycle, combat will be developed, a health bar will be added and the enemies/player will do damage. Additionally, the final boss will be developed so that it has more health is harder to defeat and does more damage.
+In this cycle, the HUD will be designed and fully prepared. The main menu will be designed. A completion design will be added.
 
 ### Objectives
 
-* [x] Enemy combat
-* [x] Healthbar
-* [x] Final boss completion
+* [x] Menu
 
 ### Usability Features
 
-Non-functional aspects: Enemies that move in a way that is not too hard to defeat but is also not too easy for players.
+Non-functional aspects: Make the menu fit the theme of the game
 
 ### Key Variables
 
@@ -25,109 +23,83 @@ Non-functional aspects: Enemies that move in a way that is not too hard to defea
 ### Pseudocode
 
 ```
+Create a readline interface for input and output
+Clear the console
+Display a header with a blue line and a game title
+Display menu options:
+  - Option 1: Start the game
+  - Option 2: View high scores
+  - Option 3: Quit
+Prompt the user to choose an option with a cyan-colored message
 
-
+Wait for the user's input and execute the following based on the input:
+  If the input is '1':
+    Display a message indicating the game is starting in green
+    Close the readline interface
+  Else, if the input is '2':
+    Display a message indicating high scores are being shown in green
+    Close the readline interface
+  Else, if the input is '3':
+    Display a message indicating the game is quitting in green
+    Close the readline interface
+  Else (if the input is not '1', '2', or '3'):
+    Display an error message in red indicating an invalid option
+    Close the readline interface
 ```
 
 ## Development
 
 ### Outcome
 
-Loading temporary sprites for the enemies
+
 
 ```javascript
-loadSprite("enemy", "/sprites/ghosty.png")
-loadSprite("boss", "/sprites/bag.png")
-```
-
-Adding symbols for enemies
-
-```javascript
-const LEVELS = [
-	[
-		"                                 ",
-		"                                 ",
-		"                                 ",
-		"                                 ",
-		"            -              -     ",
-		"            -      >       -    @",
-		"============----------------=====",
-	],
-	[
-		"                                            ",
-		"                                            ",
-		"                                            ",
-		"            -              -                ",
-		"            -              -                ",
-		"           --         >    -              @ ",
-		"============----------------================",
-	],
-	[
-		"                                                   ",
-		"                                                   ",
-		"                                    ---            ",
-		"            -              -                       ",
-		"           --              -                       ",
-		"          ---           >  -                      @",
-		"============----------------=====  ===  ===  ===  =",
-	],
-    [
-		"                                                 ---------",
-		"                                                --       @",
-		"                                               --     ----",
-		"            -              -                  --     --   ",
-		"           --              -            -------     --    ",
-		"          ---           >  -                       --     ",
-		"============----------------============------------      ",
-	],
-	[
-		"--------------------------------------------",
-		"    -                                       ",
-		"--- -                                       ",
-		"  - -           -              -            ",
-		"  - -          --              -            ",
-		"  -           ---           0  -         @  ",
-		"==---==========-----------------============",
-	],
-    
-]
-```
-
-Defining symbols and setting them as enemies.
-
-```javascript
-		"0": () => [
-			sprite("boss"),
-			area(),
-			anchor("bot"),
-			body(),
-			patrol(),
-			offscreen({ hide: true }),
-			"enemy",
-		],
-		">": () => [
-			sprite("ghosty"),
-			area(),
-			anchor("bot"),
-			body(),
-			patrol(),
-			offscreen({ hide: true }),
-			"enemy",
-		],
-	},
-}
+const readline = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+})
+console.clear();
+console.log("\x1b[34m%s\x1b[0m", "======================================================================");
+console.log("\x1b[34m%s\x1b[0m", "        The Boxing World Championship - Begin your Journey!");
+console.log("\x1b[34m%s\x1b[0m", "======================================================================");
+console.log("\x1b[33m%s\x1b[0m", "Press '1' to Start the game");
+console.log("\x1b[33m%s\x1b[0m", "Press '2' to View high scores");
+console.log("\x1b[33m%s\x1b[0m", "Press '3' to Quit");
+readline.question(`\x1b[36m%s\x1b[0m`,"Choose an option: ", (option) => {
+  if(option === '1'){
+     console.log("\x1b[32m%s\x1b[0m","Starting the game...");
+     readline.close()
+  } else if (option === '2'){
+     console.log("\x1b[32m%s\x1b[0m","Showing high scores...");
+     readline.close()
+  } else if (option === '3'){
+     console.log("\x1b[32m%s\x1b[0m","Quitting game...");
+     readline.close()
+  } else {
+     console.log("\x1b[31m%s\x1b[0m","Invalid Option. Please try again");
+     readline.close()
+  }
+})
 ```
 
 
 
 ```javascript
-	player.onCollide("danger", () => {
-		go("lose")
+```
+
+
+
+```javascript
+```
+
+
+
+```javascript
 ```
 
 ### Challenges
 
-One big challenge in this section was figuring out how to make the enemy walk towards the player inside of the ring. Therefore I have changed my plan slightly, the boss will be the one that walks towards the player, which will be developed in future.
+
 
 ## Testing
 
@@ -135,7 +107,8 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="87">Test</th><th width="127">Instructions</th><th width="223">What I expect</th><th width="208">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run code</td><td>Player spawns in the bottom left hand side of the screen slightly above the ground</td><td>As expected</td><td>Pass</td></tr><tr><td>2</td><td>Run code again</td><td>Map flour to load and be the whole length of the screen</td><td>As expected</td><td>Pass</td></tr><tr><td>3</td><td>Run code after additions</td><td>Player spawns and lands on new boundary </td><td>Player spawns in correct spot. However, player does not fall to the floor and land</td><td>Fail</td></tr><tr><td>4</td><td>Run code with fixed gravity</td><td>Player spawns and lands on the boundary</td><td>As expected - the player falls, lands and does not go through the boundary</td><td>Pass</td></tr></tbody></table>
+<table><thead><tr><th width="87">Test</th><th width="127">Instructions</th><th width="223">What I expect</th><th width="208">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td></td><td></td><td></td><td></td></tr></tbody></table>
 
 ### Evidence
 
+<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>

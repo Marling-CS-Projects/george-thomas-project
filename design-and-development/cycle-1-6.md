@@ -2,14 +2,13 @@
 
 ### Design
 
-In this cycle, the design of the player will be improved. Taking inspiration from retro games.
-
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+In this cycle, combat will be developed, a health bar will be added and the enemies/player will do damage. Additionally, the final boss will be developed so that it has more health is harder to defeat and does more damage.
 
 ### Objectives
 
-* [x] Spawn in enemies
-* [x] Enable movement for enemies
+* [x] Enemy combat
+* [x] Healthbar
+* [x] Final boss completion
 
 ### Usability Features
 
@@ -26,7 +25,24 @@ Non-functional aspects: Enemies that move in a way that is not too hard to defea
 ### Pseudocode
 
 ```
+Initialize playerHealth to 100
+Create a red baseHealth rectangle at position (0, 0) with dimensions 100x10
+Create a green healthBar rectangle at position (10, 0) with initial width based on playerHealth
 
+Define an event handler for the player's "update" event:
+  Position baseHealth and healthBar relative to the player's position
+  Update healthBar's width to match playerHealth
+  If playerHealth is less than or equal to 0, transition to the "lose" scene
+
+Create an enemy rectangle with dimensions 32x32 at position (125, 125)
+
+Define collision behavior for the player with objects tagged as "enemy":
+  Reduce playerHealth by 35
+  Ensure playerHealth is not less than 0
+  Update healthBar's width to reflect the updated playerHealth
+  If playerHealth is less than 1, transition to the "lose" scene
+
+Destroy the baseHealth rectangle
 
 ```
 
@@ -34,101 +50,66 @@ Non-functional aspects: Enemies that move in a way that is not too hard to defea
 
 ### Outcome
 
-Loading temporary sprites for the enemies
+
 
 ```javascript
-loadSprite("enemy", "/sprites/ghosty.png")
-loadSprite("boss", "/sprites/bag.png")
-```
+let playerHealth = 100;
+let baseHealth = add([
+  rect(100, 10),
+  pos(0, 0),
+  color(1, 0, 0),
+]);
+let healthBar = add([
+  rect(playerHealth, 10),
+  pos(10, 0),
+  color(0, 1, 0),
+]);
+player.on("update", () => {
+  // Position health bar relative to the player
+  baseHealth.pos = player.pos.add(-50, -160);
+  healthBar.pos = baseHealth.pos;
 
-Adding symbols for enemies
+  // Update the health bar width to match the player's health
+  healthBar.width = playerHealth;
+  // Redirect to lose scene when player health depletes
+  if (playerHealth <= 0) {
+    go("lose");
+  }
+});
+let enemy = add([rect(32, 32), pos(125, 125), "enemy"]);
+// Define enemy collision behavior
+player.onCollide("enemy", () => {
+  playerHealth -= 35;
+  // Ensure player health doesn't drop below 0
+  if (playerHealth < 0) playerHealth = 0;
+  healthBar.width = playerHealth; // update healthBar width here
+  if (playerHealth < 1) {
+    go("lose");
+  }
+});
 
-```javascript
-const LEVELS = [
-	[
-		"                                 ",
-		"                                 ",
-		"                                 ",
-		"                                 ",
-		"            -              -     ",
-		"            -      >       -    @",
-		"============----------------=====",
-	],
-	[
-		"                                            ",
-		"                                            ",
-		"                                            ",
-		"            -              -                ",
-		"            -              -                ",
-		"           --         >    -              @ ",
-		"============----------------================",
-	],
-	[
-		"                                                   ",
-		"                                                   ",
-		"                                    ---            ",
-		"            -              -                       ",
-		"           --              -                       ",
-		"          ---           >  -                      @",
-		"============----------------=====  ===  ===  ===  =",
-	],
-    [
-		"                                                 ---------",
-		"                                                --       @",
-		"                                               --     ----",
-		"            -              -                  --     --   ",
-		"           --              -            -------     --    ",
-		"          ---           >  -                       --     ",
-		"============----------------============------------      ",
-	],
-	[
-		"--------------------------------------------",
-		"    -                                       ",
-		"--- -                                       ",
-		"  - -           -              -            ",
-		"  - -          --              -            ",
-		"  -           ---           0  -         @  ",
-		"==---==========-----------------============",
-	],
-    
-]
-```
-
-Defining symbols and setting them as enemies.
-
-```javascript
-		"0": () => [
-			sprite("boss"),
-			area(),
-			anchor("bot"),
-			body(),
-			patrol(),
-			offscreen({ hide: true }),
-			"enemy",
-		],
-		">": () => [
-			sprite("ghosty"),
-			area(),
-			anchor("bot"),
-			body(),
-			patrol(),
-			offscreen({ hide: true }),
-			"enemy",
-		],
-	},
-}
+// Remove the white box at the start of the level
+destroy(baseHealth);
 ```
 
 
 
 ```javascript
-	player.onCollide("danger", () => {
-		go("lose")
+```
+
+
+
+```javascript
+```
+
+
+
+```javascript
 ```
 
 ### Challenges
 
-One big challenge in this section was figuring out how to make the enemy walk towards the player inside of the ring. Therefore I have changed my plan slightly, the boss will be the one that walks towards the player, which will be developed in future.
+
 
 ## Testing
 
@@ -136,7 +117,10 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="87">Test</th><th width="127">Instructions</th><th width="223">What I expect</th><th width="208">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run code</td><td>Player spawns in the bottom left hand side of the screen slightly above the ground</td><td>As expected</td><td>Pass</td></tr><tr><td>2</td><td>Run code again</td><td>Map flour to load and be the whole length of the screen</td><td>As expected</td><td>Pass</td></tr><tr><td>3</td><td>Run code after additions</td><td>Player spawns and lands on new boundary </td><td>Player spawns in correct spot. However, player does not fall to the floor and land</td><td>Fail</td></tr><tr><td>4</td><td>Run code with fixed gravity</td><td>Player spawns and lands on the boundary</td><td>As expected - the player falls, lands and does not go through the boundary</td><td>Pass</td></tr></tbody></table>
+<table><thead><tr><th width="87">Test</th><th width="127">Instructions</th><th width="223">What I expect</th><th width="208">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>2</td><td></td><td></td><td></td><td></td></tr><tr><td>3</td><td></td><td></td><td></td><td></td></tr><tr><td>4</td><td></td><td></td><td></td><td></td></tr></tbody></table>
 
 ### Evidence
 
+{% embed url="https://www.youtube.com/watch?v=NqaY7LWF050" %}
+
+<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
