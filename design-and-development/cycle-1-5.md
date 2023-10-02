@@ -20,11 +20,13 @@ Non-functional aspects: The design of both the power-up and the "belt" will be d
 
 ### Key Variables
 
-| Variable Name | Use |
-| ------------- | --- |
-|               |     |
-|               |     |
-|               |     |
+| Variable Name | Use                                                                                                                |
+| ------------- | ------------------------------------------------------------------------------------------------------------------ |
+| player        | Represents the player character in the game.                                                                       |
+| JUMP\_FORCE   | Represents the force applied when the player jumps.                                                                |
+| wins          | Represents the number of wins that the player gets from defeating the enemy.                                       |
+| winsLabel     | Represents the label displaying the number of wins on the screen. (top left)                                       |
+| belt          | Represents the belt that spawns and falls downwards once the enemy is defeated. As a result of the player winning. |
 
 ### Pseudocode
 
@@ -39,11 +41,11 @@ When the player character is on the ground and collides with an object (l):
             Move the conveyor belt downward by 1 unit.
             If the conveyor belt goes below the screen's height:
                 Destroy the conveyor belt object.
-        Increment the coin count (coins) by 1.
-        Update the displayed coin count on the screen (coinsLabel) to reflect the new coin count as a string.
+        Increment the coin count (wins) by 1.
+        Update the displayed coin count on the screen (winsLabel) to reflect the new coin count as a string.
 
-Define a label for displaying the player's coin count (coinsLabel):
-    Display the current value of coins at position (24, 24).
+Define a label for displaying the player's coin count (winsLabel):
+    Display the current value of wins at position (24, 24).
     Scale the label by a factor of 2.
     Fix the label in its position on the screen.
 
@@ -119,24 +121,24 @@ player.onGround((l) => {
             }
         });
        
-        coins += 1;
-        coinsLabel.text = coins.toString();
+        wins += 1;
+        winsLabel.text = wins.toString();
     }
 });
 ```
 
-
+Code for the win record display on the top left of the screen:
 
 ```javascript
-    const coinsLabel = add([
-        text(coins),
+    const winsLabel = add([
+        text(wins),
         pos(24, 24),
         scale(2),
         fixed(),
     ])
 ```
 
-
+Code for the "biggify" function which enables the player to increase in size once consuming the bottle.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>function big() {
 </strong>    let timer = 0
@@ -175,7 +177,7 @@ player.onGround((l) => {
 }
 </code></pre>
 
-
+Defining the water bottle as a symbol so that it can be spawned in the map:
 
 ```javascript
         "#": () => [
@@ -188,26 +190,18 @@ player.onGround((l) => {
             "water",
 ```
 
-
+Code for the collision between the player and the water bottle:
 
 ```javascript
     player.onCollide("water", (a) => {
         destroy(a)
         player.biggify(5)
     })
-
-    let coinPitch = 0
-
-    onUpdate(() => {
-        if (coinPitch > 0) {
-            coinPitch = Math.max(0, coinPitch - dt() * 100)
-        }
-    })
 ```
 
 ### Challenges
 
-
+One of the challenges that I faced in the making of the win record was deciding on whether to have the player pick up the belt after the win or it in the air. I went with the option of the belt spawning and falling to the floor because the code I wrote for the belt being picked up meant that it spawned on the outside of the ring (nearer the portal) so that the player could jump over the enemy, collect the belt, and receive a +1 to the win record, all without defeating the player.
 
 ## Testing
 
@@ -215,7 +209,7 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="87">Test</th><th width="127">Instructions</th><th width="223">What I expect</th><th width="208">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>2</td><td></td><td></td><td></td><td></td></tr><tr><td>3</td><td></td><td></td><td></td><td></td></tr><tr><td>4</td><td></td><td></td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th width="82">Test</th><th width="137">Instructions</th><th width="223">What I expect</th><th width="177">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run code after implementing new win record </td><td>Combat to have a new addition where the enemy is defeated and the belt spawns from the sky and lands on the boxing ring floor</td><td>The belt does spawn and fall from the sky. However it does not land on the boxing ring floor.</td><td>I will call this a pass because I actually quite like the belt falling out of the world.</td></tr><tr><td>2</td><td>Add win record text top left and run code.</td><td>The top left starts by just saying "0". But adds +1 each time the player defeats an enemy.</td><td>The win record goes up by one after defeating an enemy.</td><td></td></tr><tr><td>3</td><td></td><td></td><td></td><td></td></tr><tr><td>4</td><td></td><td></td><td></td><td></td></tr></tbody></table>
 
 ### Evidence
 
