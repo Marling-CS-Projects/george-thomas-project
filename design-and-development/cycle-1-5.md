@@ -138,6 +138,14 @@ Code for the win record display on the top left of the screen:
     ])
 ```
 
+Code that destroys the belt before it goes through the floor:
+
+```javascript
+        wait(4, () => {
+            destroy(belt);
+        });
+```
+
 Code for the "biggify" function which enables the player to increase in size once consuming the bottle.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>function big() {
@@ -209,7 +217,7 @@ Evidence for testing
 
 ### Tests
 
-<table><thead><tr><th width="82">Test</th><th width="139">Instructions</th><th width="223">What I expect</th><th width="177">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run code after implementing new win record </td><td>Combat to have a new addition where the enemy is defeated and the belt spawns from the sky and lands on the boxing ring floor</td><td>The belt does spawn and fall from the sky. However it does not land on the boxing ring floor.</td><td>I will call this a pass because I actually quite like the belt falling out of the world.</td></tr><tr><td>2</td><td>Add win record text top left and run code.</td><td>The top left starts by just saying "0". But adds +1 each time the player defeats an enemy.</td><td>The win record goes up by one after defeating an enemy. But not happy with the result, its just a plain single number on its own.</td><td>Fail</td></tr><tr><td>3</td><td>Develop the win record and run again.</td><td>The top left starts with nothing, then after the enemy is defeated, a win record sentence appears with the win number increasing by 1 after each defeated enemy.</td><td>The win record works how expected</td><td>Pass</td></tr><tr><td>4</td><td>Add water bottle power-up and run code</td><td>When the bottle is consumed by the player, the players hitbox increases.</td><td>The water bottle increases the players size.</td><td>Pass</td></tr></tbody></table>
+<table><thead><tr><th width="82">Test</th><th width="139">Instructions</th><th width="223">What I expect</th><th width="177">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run code after implementing new win record </td><td>Combat to have a new addition where the enemy is defeated and the belt spawns from the sky and lands on the boxing ring floor</td><td>The belt does spawn and fall from the sky. However it does not land on the boxing ring floor.</td><td>Fail</td></tr><tr><td>2</td><td>Run code after changing how the belt falls</td><td>The belt spawns after the enemy is defeated and lasts 4 seconds before disapearing.</td><td>The belt falls and then dissapears before going through the floor.</td><td>Pass</td></tr><tr><td>3</td><td>Add win record text top left and run code.</td><td>The top left starts by just saying "0". But adds +1 each time the player defeats an enemy.</td><td>The win record goes up by one after defeating an enemy. But not happy with the result, its just a plain single number on its own.</td><td>Fail</td></tr><tr><td>4</td><td>Develop the win record and run again.</td><td>The top left starts with nothing, then after the enemy is defeated, a win record sentence appears with the win number increasing by 1 after each defeated enemy.</td><td>The win record works how expected</td><td>Pass</td></tr><tr><td>5</td><td>Add water bottle power-up and run code</td><td>When the bottle is consumed by the player, the players hitbox increases.</td><td>The water bottle increases the players size.</td><td>Pass</td></tr><tr><td>6</td><td>Increase the amount that the player grows after colliding with the water-bottle</td><td>When the bottle is consumed, the player increases by an even greater size.</td><td>The player increases to a greater size as desired</td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
 
@@ -217,11 +225,13 @@ Evidence for testing
 
 <figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
+Video testing the new win record and water bottle:
+
 {% embed url="https://youtu.be/WT3bBDnDhDY" %}
 
-The developed win record screenshots:
+Video testing of the developed win record and water bottle:
 
-![](../.gitbook/assets/image.png)![](<../.gitbook/assets/image (1).png>)![](<../.gitbook/assets/image (2).png>)
+{% embed url="https://youtu.be/69uoAqzMwGE" %}
 
 * [x] Boxing record
 * [x] New powerup

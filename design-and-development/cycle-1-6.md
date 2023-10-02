@@ -65,30 +65,29 @@ let healthBar = add([
   color(0, 1, 0),
 ]);
 player.on("update", () => {
-  // Position health bar relative to the player
+  
   baseHealth.pos = player.pos.add(-50, -160);
   healthBar.pos = baseHealth.pos;
 
-  // Update the health bar width to match the player's health
+  
   healthBar.width = playerHealth;
-  // Redirect to lose scene when player health depletes
+  
   if (playerHealth <= 0) {
     go("lose");
   }
 });
 let enemy = add([rect(32, 32), pos(125, 125), "enemy"]);
-// Define enemy collision behavior
+
 player.onCollide("enemy", () => {
   playerHealth -= 35;
-  // Ensure player health doesn't drop below 0
+  
   if (playerHealth < 0) playerHealth = 0;
-  healthBar.width = playerHealth; // update healthBar width here
+  healthBar.width = playerHealth; 
   if (playerHealth < 1) {
     go("lose");
   }
 });
 
-// Remove the white box at the start of the level
 destroy(baseHealth);
 ```
 
