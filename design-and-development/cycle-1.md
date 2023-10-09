@@ -113,7 +113,7 @@ The image above displays what my map looks like on spawn using Kaboom.js sprites
 
 * [x] Create a map design for the start of the game and where the player spawns
 
-<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This image above shows that gravity has been implemented and the player falls from the spawn point to land on the ground.
 
