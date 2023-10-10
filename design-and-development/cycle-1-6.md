@@ -93,26 +93,27 @@ destroy(baseHealth);
 
 
 
-```javascript
-```
 
 
 
-```javascript
-```
 
 
 
-```javascript
-```
+
+
+
 
 ### Challenges
 
+The main challenge that I have faced during the development of the combat is the player taking damage when defeating the enemy. What I mean by that is when the player jumps and lands on the enemy, it is meant to just defeat the enemy and not do any damage to the player. Instead, when the player jumps onto the enemy, the player takes damage.
 
+It took a while to find a fix and to change the code to prevent it for happening. In the end, the only solution that I found was to just add the same amount of health lost back. As a result, the player loses 35 health and gains it right back, all in the same collision. This fix worked well as there is no delay between losing and gaining the health, so you cannot see the health bar changing during that collision.
+
+Another challenge that I faced during this cycle was that there was a white box that spawned just above the players spawn on each of the levels. It is definitely to do with the health bar code because after testing, it disappears when I take out the health bar code. I would say this was a bigger challenge because it took a very long time to find a fix.
 
 ## Testing
 
-Evidence for testing
+
 
 ### Tests
 
