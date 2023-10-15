@@ -30,7 +30,7 @@ Display menu options:
   - Option 1: Start the game
   - Option 2: View high scores
   - Option 3: Quit
-Prompt the user to choose an option with a cyan-colored message
+Prompt the user to choose an option with a cyan-coloured message
 
 Wait for the user's input and execute the following based on the input:
   If the input is '1':

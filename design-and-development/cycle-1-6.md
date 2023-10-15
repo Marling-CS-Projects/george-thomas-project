@@ -16,104 +16,111 @@ Non-functional aspects: Enemies that move in a way that is not too hard to defea
 
 ### Key Variables
 
-| Variable Name | Use |
-| ------------- | --- |
-|               |     |
-|               |     |
-|               |     |
+| Variable Name | Use                                                                                                                                                                                                                                                    |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| playerHealth  | States the players health which starts at 100                                                                                                                                                                                                          |
+| healthBar     | For the player's health bar. Its properties are rect(playerHealth, 10), which means that it is the size of the player's current health, pos(10, 0), which is the position of the health bar above the player, colour(0), which makes the colour black. |
 
 ### Pseudocode
 
 ```
-Initialize playerHealth to 100
-Create a red baseHealth rectangle at position (0, 0) with dimensions 100x10
-Create a green healthBar rectangle at position (10, 0) with initial width based on playerHealth
+Set playerHealth to 100
+Create a healthBar with width equal to playerHealth, height 10, and position (10, 0)
 
-Define an event handler for the player's "update" event:
-  Position baseHealth and healthBar relative to the player's position
-  Update healthBar's width to match playerHealth
-  If playerHealth is less than or equal to 0, transition to the "lose" scene
+On player update:
+    Set healthBar position to (player.x - 50, player.y - 160)
+    Set healthBar width to playerHealth
 
-Create an enemy rectangle with dimensions 32x32 at position (125, 125)
+    If playerHealth is less than or equal to 0:
+        Go to "lose" state
 
-Define collision behavior for the player with objects tagged as "enemy":
-  Reduce playerHealth by 35
-  Ensure playerHealth is not less than 0
-  Update healthBar's width to reflect the updated playerHealth
-  If playerHealth is less than 1, transition to the "lose" scene
+Create an enemy with width 32, height 32, and position (125, 125)
 
-Destroy the baseHealth rectangle
+On player collision with "enemy":
+    Decrease playerHealth by 35
+    If playerHealth is less than 0, set playerHealth to 0
+    Set healthBar width to playerHealth 
+    If playerHealth is less than 1:
+        Go to "lose" state
 
+On player collision with "boss":
+    Decrease playerHealth by 67
+    If playerHealth is less than 0, set playerHealth to 0
+    Set healthBar width to playerHealth 
+    If playerHealth is less than 1:
+        Go to "lose" state
 ```
 
 ## Development
 
 ### Outcome
 
-
+Full code for the health bar. This displays the code for the player's health, the health bar, and their responses to collisions with both the enemies and the boss.
 
 ```javascript
 let playerHealth = 100;
-let baseHealth = add([
-  rect(100, 10),
-  pos(0, 0),
-  color(1, 0, 0),
-]);
+
+
 let healthBar = add([
   rect(playerHealth, 10),
   pos(10, 0),
-  color(0, 1, 0),
+  colour(0),
+
+
 ]);
 player.on("update", () => {
-  
-  baseHealth.pos = player.pos.add(-50, -160);
-  healthBar.pos = baseHealth.pos;
 
-  
+  healthBar.pos = player.pos.add(-50, -160);
   healthBar.width = playerHealth;
-  
+
   if (playerHealth <= 0) {
     go("lose");
   }
 });
-let enemy = add([rect(32, 32), pos(125, 125), "enemy"]);
 
 player.onCollide("enemy", () => {
   playerHealth -= 35;
-  
+
   if (playerHealth < 0) playerHealth = 0;
   healthBar.width = playerHealth; 
   if (playerHealth < 1) {
     go("lose");
   }
 });
+player.onCollide("boss", () => {
+  playerHealth -= 67;
 
-destroy(baseHealth);
+  if (playerHealth < 0) playerHealth = 0;
+  healthBar.width = playerHealth; 
+  if (playerHealth < 1) {
+    go("lose");
+  }
+})
 ```
 
+After picking up the water-bottle, the player now receives a + 35 health. This is an update that was required as the players health decreased on the same collision as defeating the enemy.
 
-
-
-
-
-
-
-
-
-
-
+```javascript
+    player.onGround((l) => {
+        if (l.is("enemy")) {
+            player.jump(JUMP_FORCE * 1.1);
+            destroy(l);
+            playerHealth += 35;
+            const belt = add([
+                sprite("belt"),
+                pos(player.pos.x, 0),
+                scale(2),
+                "belt"
+            ]);
+```
 
 ### Challenges
 
 The main challenge that I have faced during the development of the combat is the player taking damage when defeating the enemy. What I mean by that is when the player jumps and lands on the enemy, it is meant to just defeat the enemy and not do any damage to the player. Instead, when the player jumps onto the enemy, the player takes damage.
 
-It took a while to find a fix and to change the code to prevent it for happening. In the end, the only solution that I found was to just add the same amount of health lost back. As a result, the player loses 35 health and gains it right back, all in the same collision. This fix worked well as there is no delay between losing and gaining the health, so you cannot see the health bar changing during that collision.
-
-Another challenge that I faced during this cycle was that there was a white box that spawned just above the players spawn on each of the levels. It is definitely to do with the health bar code because after testing, it disappears when I take out the health bar code. I would say this was a bigger challenge because it took a very long time to find a fix.
+It took a while to find a fix and to change the code to prevent it from happening. In the end, the only solution that I found was to just add the same amount of health lost back. As a result, the player loses 35 health and gains it right back, all in the same collision. This fix worked well as there is no delay between losing and gaining the health, so you cannot see the health bar changing during that collision.
 
 ## Testing
-
-
 
 ### Tests
 
@@ -124,3 +131,5 @@ Another challenge that I faced during this cycle was that there was a white box 
 {% embed url="https://www.youtube.com/watch?v=NqaY7LWF050" %}
 
 <figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+
+{% embed url="https://youtu.be/BQp1MbxqUZ4" %}
