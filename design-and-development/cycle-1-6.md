@@ -7,8 +7,8 @@ In this cycle, combat will be developed, a health bar will be added and the enem
 ### Objectives
 
 * [x] Enemy combat
-* [x] Healthbar
-* [x] Final boss completion
+* [x] Implement health bar
+* [x] Final boss interaction
 
 ### Usability Features
 
@@ -105,7 +105,7 @@ After picking up the water-bottle, the player now receives a + 35 health. This i
         if (l.is("enemy")) {
             player.jump(JUMP_FORCE * 1.1);
             destroy(l);
-            playerHealth += 35;
+            playerHealth += 35; //new addition
             const belt = add([
                 sprite("belt"),
                 pos(player.pos.x, 0),
@@ -124,12 +124,23 @@ It took a while to find a fix and to change the code to prevent it from happenin
 
 ### Tests
 
-<table><thead><tr><th width="87">Test</th><th width="127">Instructions</th><th width="223">What I expect</th><th width="208">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>2</td><td></td><td></td><td></td><td></td></tr><tr><td>3</td><td></td><td></td><td></td><td></td></tr><tr><td>4</td><td></td><td></td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th width="87">Test</th><th width="136">Instructions</th><th width="223">What I expect</th><th width="208">What actually happens</th><th>Pass/Fail</th></tr></thead><tbody><tr><td>1</td><td>Run code with the enemy combat included. Walk into the enemy and do not attempt to defeat the enemy.</td><td>Upon collision between the player and the enemy characters: the enemy will deal -35 damage to the player, the player to be defeated after 3 collisions as a result of the 100 total health becoming less than 0.</td><td>The player takes -35 damage each time a collision is made with the enemy. The player also is defeated after 3 collisions with the enemy.</td><td>Pass</td></tr><tr><td>2</td><td>Run code and get the player character to defeat the enemy.</td><td>The player will jump onto of the enemy and will defeat the enemy whilst taking no damage.</td><td>The player jumps on top of the enemy and the enemy is defeated. The player does not visibly take any damage as there is no health bar as of yet. Therefore this is technically a pass.</td><td>Pass</td></tr><tr><td>3</td><td>Run code after implementing health bar.</td><td>Health bar spawns as a black rectangle above the player. The health bar stays above the player at all times. The health bar is at the right height so that when the player takes the increase in size from the water-bottle the health bar is still on top of the players hitbox. The health bar decreases in size by a 1/3 each time a collision with the enemy is made. The health bar does not decrease in size when the player jumps on top of the enemy to defeat it.</td><td>All as expected apart from one problem: the players health bar decrease and the player takes damage when jumping on top of the enemy.</td><td>Fail</td></tr><tr><td>4</td><td>Run code with new fix for previous problem.</td><td>Players health/health bar does not decrease upon a collision where the player jumps on top of the enemy. The enemy is defeated as normal</td><td>The players health bar does not decrease and the enemy is defeated after the player jumps on top of the enemy.</td><td>Pass</td></tr></tbody></table>
 
 ### Evidence
 
-{% embed url="https://www.youtube.com/watch?v=NqaY7LWF050" %}
+Screen shot of the health bar being implemented.
+
+* [x] Implement health bar
 
 <figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
+Testing the reactions of the health bar for all possible outcomes excluding the boss.
+
+{% embed url="https://www.youtube.com/watch?v=NqaY7LWF050" %}
+
+Testing the reactions of the health bar after fixes and including the boss interaction, which deals extra damage.
+
 {% embed url="https://youtu.be/BQp1MbxqUZ4" %}
+
+* [x] Enemy combat
+* [x] Final boss interaction

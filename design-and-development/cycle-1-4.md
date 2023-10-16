@@ -22,8 +22,8 @@ Non-functional aspects: I want my enemies to not be too challenging for the play
 | LEVELS                                      | This is an array of level layouts, where each level is represented as an array of strings. It defines the layout of the game levels.                                                                                |
 | "0"                                         | This is a symbol used in the level layout strings, representing the spawn point for the "boss." When this symbol is encountered in the level layout, it creates a boss entity.                                      |
 | ">"                                         | This is a symbol used in the level layout strings, representing a normal enemy. When this symbol is encountered in the level layout, it creates a standard enemy entity.                                            |
-| sprite("boss")                              | This defines the sprite for the boss entity, using the image "boss.png."                                                                                                                                            |
-| sprite("ghosty")                            | This defines the sprite for the standard enemy entity, using the image "ghosty.png."                                                                                                                                |
+| sprite("bag")                               | This defines the temporary sprite made by Kaboom.js for the boss. Using "bag.png".                                                                                                                                  |
+| sprite("ghosty")                            | This defines the temporary sprite made by Kaboom.js for the normal enemy. Using "ghosty.png".                                                                                                                       |
 | area()                                      | This creates a collision area for the enemy entities.                                                                                                                                                               |
 | anchor("bot")                               | This sets the anchor point of the enemy entities to the bottom.                                                                                                                                                     |
 | body()                                      | This creates a physics body for the enemy entities.                                                                                                                                                                 |
@@ -36,20 +36,20 @@ Non-functional aspects: I want my enemies to not be too challenging for the play
 
 ```
 Load sprite "enemy" from "/sprites/ghosty.png"
-Load sprite "boss" from "/sprites/bag.png"
+Load sprite "bag" from "/sprites/bag.png"
 
 Define LEVELS as an array of level layouts, where each level is represented as an array of strings.
 
 Define behaviours for specific symbols used in the level layouts:
 - When encountering "0" in the level layout:
   - Create an entity with the following attributes:
-    - Display the "boss" sprite
+    - Display the "bag" sprite
     - Define a collision area
     - Anchor at the bottom
     - Create a physics body
     - Apply a patrol behaviour
     - Set offscreen behaviour to hide
-    - Tag the entity as "enemy"
+    - Tag the entity as "boss"
 
 - When encountering ">" in the level layout:
   - Create an entity with the following attributes:
@@ -75,7 +75,7 @@ Loading temporary sprites for the enemies
 
 ```javascript
 loadSprite("enemy", "/sprites/ghosty.png")
-loadSprite("boss", "/sprites/bag.png")
+loadSprite("bag", "/sprites/bag.png")
 ```
 
 Adding symbols for enemies
@@ -135,13 +135,13 @@ Declaring what each symbol represents. The "0" represents the spawn for the "bos
 
 ```javascript
 		"0": () => [
-			sprite("boss"),
+			sprite("bag"),
 			area(),
 			anchor("bot"),
 			body(),
 			patrol(),
 			offscreen({ hide: true }),
-			"enemy",
+			"boss",
 		],
 		">": () => [
 			sprite("ghosty"),
@@ -217,3 +217,7 @@ Here are screenshots to show the enemy's movement and the "lose" scene.
 <figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+
+Screenshot of the temporary boss sprite:
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
