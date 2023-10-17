@@ -2,89 +2,295 @@
 
 ### Design
 
-In this cycle, the HUD will be designed and fully prepared. The main menu will be designed. A completion design will be added.
+In this cycle, the design of the game will be developed. The player and enemy characters will be designed in a retro boxing-style fashion. The map floor and the ropes will be designed in a similar style to fit the game. Finally, this cycle will include development on the "Win" scene where there will be a fun design and words to display the player's win record.
 
 ### Objectives
 
-* [x] Menu
+* [x] Character Design/Style Development
+* [x] Map Design/Style Development
+* [x] "Win" Scene Development
 
 ### Usability Features
 
-Non-functional aspects: Make the menu fit the theme of the game
+Non-functional aspects: The style of my characters/map etc will be made sure to fit the PEGI rating of 3. The style and designs will also be made so that they fit the desired theme which is retro video game style.
 
 ### Key Variables
 
-| Variable Name | Use |
-| ------------- | --- |
-|               |     |
-|               |     |
-|               |     |
+| Variable Name                  | Use |
+| ------------------------------ | --- |
+| boxer1, boxer2, boxer3, boxer4 |     |
+| enemy1, enemy2, enemy3, enemy4 |     |
+| boss1                          |     |
 
 ### Pseudocode
 
 ```
-Create a readline interface for input and output
-Clear the console
-Display a header with a blue line and a game title
-Display menu options:
-  - Option 1: Start the game
-  - Option 2: View high scores
-  - Option 3: Quit
-Prompt the user to choose an option with a cyan-coloured message
+Procedure WinScene():
+    DisplayText("_____________________________________________________________", 0, 1, 2, (33, 73, 196))
+    DisplayText("AAAAAAAND NEEEWWWWWW", 700, 90, 1, (135, 206, 235))
+    DisplayText("Congratulations! You are the NEW Boxing World Champion!", 400, 120, 1, (135, 206, 235))
+    DisplayText("You made it with a boxing record of " + wins + " wins!", 500, 150, 1, (135, 206, 235))
+    DisplayText("_____________________________________________________________", 0, 400, 2, (33, 73, 196))
 
-Wait for the user's input and execute the following based on the input:
-  If the input is '1':
-    Display a message indicating the game is starting in green
-    Close the readline interface
-  Else, if the input is '2':
-    Display a message indicating high scores are being shown in green
-    Close the readline interface
-  Else, if the input is '3':
-    Display a message indicating the game is quitting in green
-    Close the readline interface
-  Else (if the input is not '1', '2', or '3'):
-    Display an error message in red indicating an invalid option
-    Close the readline interface
+    boxer1 = CreateBoxer(1050, 0, 5)
+    boxer2 = CreateBoxer(600, 0, 5)
+    boxer3 = CreateWater(1400, 0, 5)
+    boxer4 = CreateBoxer(400, 0, 5)
+    enemy1 = CreateEnemy(250, 0, 5)
+    enemy2 = CreateEnemy(1800, 0, 5)
+    enemy3 = CreateEnemy(700, 0, 5)
+    enemy4 = CreateEnemy(100, 0, 5)
+    boss1 = CreateBoss(800, 0, 7)
+
+    Loop:
+        MoveBoxer(boxer1, 0.01)
+        MoveBoxer(boxer2, 0.03)
+        MoveBoxer(boxer3, 0.005)
+        MoveBoxer(boxer4, 0.005)
+        MoveEnemy(enemy1, 0.03)
+        MoveEnemy(enemy2, 0.03)
+        MoveEnemy(enemy3, 0.01)
+        MoveEnemy(enemy4, 0.001)
+        MoveBoss(boss1, 0.01)
+
+        If boxer1.pos.y > height() Then
+            Destroy(boxer1)
+        End If
+        If boxer2.pos.y > height() Then
+            Destroy(boxer2)
+        End If
+        If boxer3.pos.y > height() Then
+            Destroy(boxer3)
+        End If
+        If boxer4.pos.y > height() Then
+            Destroy(boxer4)
+        End If
+        If enemy1.pos.y > height() Then
+            Destroy(enemy1)
+        End If
+        If enemy2.pos.y > height() Then
+            Destroy(enemy2)
+        End If
+        If enemy3.pos.y > height() Then
+            Destroy(enemy3)
+        End If
+        If enemy4.pos.y > height() Then
+            Destroy(enemy4)
+        End If
+        If boss1.pos.y > height() Then
+            Destroy(boss1)
+        End If
+
+End Procedure
 ```
 
 ## Development
 
 ### Outcome
 
+<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
+<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
 ```javascript
-const readline = require('readline').createInterface({
-  input: process.stdin,
-  output: process.stdout
-})
-console.clear();
-console.log("\x1b[34m%s\x1b[0m", "======================================================================");
-console.log("\x1b[34m%s\x1b[0m", "        The Boxing World Championship - Begin your Journey!");
-console.log("\x1b[34m%s\x1b[0m", "======================================================================");
-console.log("\x1b[33m%s\x1b[0m", "Press '1' to Start the game");
-console.log("\x1b[33m%s\x1b[0m", "Press '2' to View high scores");
-console.log("\x1b[33m%s\x1b[0m", "Press '3' to Quit");
-readline.question(`\x1b[36m%s\x1b[0m`,"Choose an option: ", (option) => {
-  if(option === '1'){
-     console.log("\x1b[32m%s\x1b[0m","Starting the game...");
-     readline.close()
-  } else if (option === '2'){
-     console.log("\x1b[32m%s\x1b[0m","Showing high scores...");
-     readline.close()
-  } else if (option === '3'){
-     console.log("\x1b[32m%s\x1b[0m","Quitting game...");
-     readline.close()
-  } else {
-     console.log("\x1b[31m%s\x1b[0m","Invalid Option. Please try again");
-     readline.close()
-  }
+scene("win", () => {
+    add([
+        text("_____________________________________________________________"),
+        pos(0,1),
+        scale(2),
+        fixed(),
+        color(33,73,196),
+
+    ])
+    add([
+        text("AAAAAAAND NEEEWWWWWW"),
+        pos(700,90),
+        scale(1),
+        fixed(),
+        color(135,206,235),
+
+    ])
+    add([
+        text("Congratulations! You are the NEW Boxing World Champion!"),
+        pos(400,120),
+        scale(1),
+        fixed(),
+        color(135,206,235),
+
+    ])
+    add([
+        text("You made it with a boxing record of " + wins + " wins!"),
+        pos(500, 150),
+        scale(1),
+        fixed(),
+        color(135,206,235),
+
+    ])
+    add([
+        text("_____________________________________________________________"),
+        pos(0,400),
+        scale(2),
+        fixed(),
+        color(33,73,196),
+
+    ])
+    const boxer1 = add([
+        sprite("boxer"),
+        pos(1050, 0),
+        scale(5),
+        "belt"
+    ]);
+    loop(0.01, () => {
+        boxer1.pos.y += 1;
+        if (boxer1.pos.y > height()) {
+            destroy(boxer1);
+        }
+    });
+
+    const boxer2 = add([
+        sprite("boxer"),
+        pos(600, 0),
+        scale(5),
+        "belt"
+    ]);
+    loop(0.03, () => {
+        boxer2.pos.y += 1;
+        if (boxer2.pos.y > height()) {
+            destroy(boxer2);
+        }
+    });
+
+    const boxer3 = add([
+        sprite("water"),
+        pos(1400, 0),
+        scale(5),
+        "belt"
+    ]);
+    loop(0.005, () => {
+        boxer3.pos.y += 1;
+        if (boxer3.pos.y > height()) {
+            destroy(boxer3);
+        }
+    });
+    const boxer4 = add([
+        sprite("boxer"),
+        pos(400, 0),
+        scale(5),
+        "belt"
+    ]);
+    loop(0.005, () => {
+        boxer4.pos.y += 1;
+        if (boxer4.pos.y > height()) {
+            destroy(boxer4);
+        }
+    });
+
+    const enemy1 = add([
+        sprite("enemy"),
+        pos(250, 0),
+        scale(5),
+        "belt"
+    ]);
+    loop(0.03, () => {
+        enemy1.pos.y += 1;
+        if (enemy1.pos.y > height()) {
+            destroy(enemy1);
+        }
+    });
+
+    const enemy2 = add([
+        sprite("enemy"),
+        pos(1800, 0),
+        scale(5),
+        "belt"
+    ]);
+    loop(0.03, () => {
+        enemy2.pos.y += 1;
+        if (enemy2.pos.y > height()) {
+            destroy(enemy2);
+        }
+    });
+
+    const enemy3 = add([
+        sprite("enemy"),
+        pos(700, 0),
+        scale(5),
+        "belt"
+    ]);
+    loop(0.01, () => {
+        enemy3.pos.y += 1;
+        if (enemy3.pos.y > height()) {
+            destroy(enemy3);
+        }
+    });
+    const enemy4 = add([
+        sprite("enemy"),
+        pos(100, 0),
+        scale(5),
+        "belt"
+    ]);
+    loop(0.001, () => {
+        enemy4.pos.y += 1;
+        if (enemy4.pos.y > height()) {
+            destroy(enemy4);
+        }
+    });
+    const boss1 = add([
+        sprite("boss"),
+        pos(800, 0),
+        scale(7),
+        "belt"
+    ]);
+    loop(0.01, () => {
+        boss1.pos.y += 1;
+        if (boss1.pos.y > height()) {
+            destroy(boss1);
+        }
+    });
+
+
 })
 ```
 
 
 
 ```javascript
+player.onGround((l) => {
+        if (l.is("boss")) {
+            player.jump(JUMP_FORCE * 1.1);
+            destroy(l);
+            playerHealth += 67;
+            const belt = add([
+                sprite("belt"),
+                pos(player.pos.x, 0),
+                scale(2),
+                "belt"
+            ]);
+            loop(0.01, () => {
+                belt.pos.y += 1;
+                if (belt.pos.y > height()) {
+                    destroy(belt);
+                }
+            });
+            wait(4, () => {
+                destroy(belt);
+            });
+            wins += 1;
+            const winsLabel = add([
+                text("Win record: " + wins + " - 0"),
+                pos(24, 24),
+                scale(2),
+                fixed(),
+            ]);
+            wait(2, () => {
+                go("win");
+            });
+        }
+    });
 ```
 
 
@@ -111,4 +317,3 @@ Evidence for testing
 
 ### Evidence
 
-<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
