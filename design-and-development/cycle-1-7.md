@@ -16,11 +16,11 @@ Non-functional aspects: The style of my characters/map etc will be made sure to 
 
 ### Key Variables
 
-| Variable Name                  | Use |
-| ------------------------------ | --- |
-| boxer1, boxer2, boxer3, boxer4 |     |
-| enemy1, enemy2, enemy3, enemy4 |     |
-| boss1                          |     |
+| Variable Name                  | Use                                            |
+| ------------------------------ | ---------------------------------------------- |
+| boxer1, boxer2, boxer3, boxer4 | Spawns the boxer characters on the "Win" scene |
+| enemy1, enemy2, enemy3, enemy4 | Spawns the enemy characters on the "Win" scene |
+| boss1                          |                                                |
 
 ### Pseudocode
 
