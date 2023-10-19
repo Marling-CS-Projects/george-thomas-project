@@ -4,11 +4,14 @@
 
 In this cycle, the design of the game will be developed. The player and enemy characters will be designed in a retro boxing-style fashion. The map floor and the ropes will be designed in a similar style to fit the game. Finally, this cycle will include development on the "Win" scene where there will be a fun design and words to display the player's win record.
 
+I want to also make a few adjustments to the map layout in this cycle. This is because after some test runs in previous cycles, the map layout either encounters some errors, or the map layout does not make much sense in some areas. ([Map Changes](cycle-1-7.md#map-changes))
+
 ### Objectives
 
 * [x] Character Design/Style Development
 * [x] Map Design/Style Development
 * [x] "Win" Scene Development
+* [x] Improve the Map-Layout
 
 ### Usability Features
 
@@ -20,7 +23,7 @@ Non-functional aspects: The style of my characters/map etc will be made sure to 
 | ------------------------------ | ---------------------------------------------- |
 | boxer1, boxer2, boxer3, boxer4 | Spawns the boxer characters on the "Win" scene |
 | enemy1, enemy2, enemy3, enemy4 | Spawns the enemy characters on the "Win" scene |
-| boss1                          |                                                |
+| boss1                          | Spawns the boss character on the "Win" scene   |
 
 ### Pseudocode
 
@@ -88,13 +91,19 @@ End Procedure
 
 ### Outcome
 
-<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+Here are the screenshots of the style designs for the player character, enemy character, and the boss character.
 
-<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption><p>Player Character Design</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption><p>Enemy Character Design</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption><p>Boss Character Design</p></figcaption></figure>
+
+Here is a screenshot to display the new designs for the boxing ring. It fits the feel of retro and simple.
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+Underneath is the code for the "Win" scene. It includes the text that is displayed in the centre of the scene. The code also includes
 
 ```javascript
 scene("win", () => {
@@ -293,14 +302,67 @@ player.onGround((l) => {
     });
 ```
 
+### Map Changes
 
-
-```javascript
-```
-
-
+Here is the code for the map changes that I have made. As mentioned in the description of this cycle, I wanted to make some changes to the map layout that I believe were necessary. Firstly, I originally stuck to my plan to have a tunnel for the second to last level. This was because it suited real-life boxing and therefore made sense to add to my game. However, due to the water bottle power-up increasing the player's size, the player would take the power-up but then get stuck trying to get into the tunnel. Secondly, I didn't end up liking my planned final level, it just didn't feel right with the roof that it had before. As a result, I have changed it to better fit being the final grand stadium for the boss fight.
 
 ```javascript
+const LEVELS = [
+    [
+        "                              ",
+        "                              ",
+        "                              ",
+        "                        #     ",
+        "         r              r     ",
+        "         r      >       r    @",
+        "=========----------------=====",
+    ],
+    [
+        "                                 ",
+        "                                 ",
+        "                                 ",
+        "                        #        ",
+        "         r              r        ",
+        "         r          >   r      @ ",
+        "=========----------------========",
+    ],
+    [
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "                        #                       ",
+        "         r              r                       ",
+        "         r           >  r                      @",
+        "=========----------------=====   ==   ==   ==  =",
+    ],
+    [
+        "                                                    ",
+        "                                                    ",
+        "                                                  @ ",
+        "                        #                       === ",
+        "         r              r                ===        ",
+        "         r           >  r         ===               ",
+        "=========----------------======                     ",
+    ],
+    [
+        "                                          ",
+        "                                          ",
+        "                                          ",
+        "                                          ",
+        "                                          ",
+        "=======                                   ",
+        "                             #            ",
+        "              r              r            ",
+        "              r           0  r            ",
+        "            ==----------------==          ",
+        "            ====================          ",
+        "            ====================          ",
+        "            ====================          ",
+        "            ====================          ",
+        "            ====================          ",
+    ],
+
+]
 ```
 
 ### Challenges
@@ -317,3 +379,16 @@ Evidence for testing
 
 ### Evidence
 
+This video tests the new map layout after the changes that were made:
+
+{% embed url="https://youtu.be/OvomQt1ujWA" %}
+
+* [x] Improve the Map-Layout
+
+A video testing the "Win" Scene. It is displayed after a wait of 2 seconds from defeating the final boss:
+
+{% embed url="https://youtu.be/FpdxiaKUEa0" %}
+
+Here is a video displaying a full run of the game. It includes all the movement, combat, power-ups, HUD, boss fight, and the "Win" scene:
+
+{% embed url="https://youtu.be/1WdXdGfHWCc" %}
