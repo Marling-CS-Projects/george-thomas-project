@@ -103,7 +103,7 @@ Here is a screenshot to display the new designs for the boxing ring. It fits the
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-Underneath is the code for the "Win" scene. It includes the text that is displayed in the centre of the scene. The code also includes
+Underneath is the code for the "Win" scene. It includes the text that is displayed in the centre of the scene. The code also includes the spawning of the characters on the win scene for aesthetics.
 
 ```javascript
 scene("win", () => {
@@ -265,7 +265,7 @@ scene("win", () => {
 })
 ```
 
-
+This code shows the addition of the "wait" function, were the game ends and cuts to the "Win" scene 2 seconds after the player defeats the boss.
 
 ```javascript
 player.onGround((l) => {
@@ -367,7 +367,7 @@ const LEVELS = [
 
 ### Challenges
 
-
+One challenge in this cycle was deciding on how to style the characters. I questioned whether I wanted to design them myself or use outside resources for ideas. I thought because I designed the water bottle and the boxing "belt", I would have the skills to draw the boxers themselves. H
 
 ## Testing
 
