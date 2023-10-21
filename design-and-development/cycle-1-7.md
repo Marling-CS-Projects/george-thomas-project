@@ -91,7 +91,7 @@ End Procedure
 
 ### Outcome
 
-Here are the screenshots of the style designs for the player character, enemy character, and the boss character.
+Here are the screenshots of the style designs for the player character, the enemy character, and the boss character.
 
 <figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption><p>Player Character Design</p></figcaption></figure>
 
@@ -367,7 +367,11 @@ const LEVELS = [
 
 ### Challenges
 
-One challenge in this cycle was deciding on how to style the characters. I questioned whether I wanted to design them myself or use outside resources for ideas. I thought because I designed the water bottle and the boxing "belt", I would have the skills to draw the boxers themselves. H
+One challenge in this cycle was deciding on how to style the characters. I questioned whether I wanted to design them myself or use outside resources for ideas. I thought because I designed the water bottle and the boxing "belt", I would have the skills to draw the boxers themselves. However, after some attempts at drawing the characters, I realised that I do not have the skills to draw the characters in a way that I like to fit my game. Therefore, I decided to go with premade character designs for the player and enemy characters. However, as for the boss character design, I half drew it by taking the main idea from the pre-made ones and made a few changes.
+
+Another challenge in this cycle was dealing with what to do after realising that the original plan for the layout of some of the levels was incorrect. Therefore, I adjusted some of the levels repeatedly until I found the perfect format for them.
+
+An additional challenge in this cycle was deciding how I wanted to design the "win" scene. I had already planned what I was going to write on the scene but I found it a challenge to design the end scene. After some variations, I went for the falling characters of the game as I think it is quite amusing and fits the retro video game style.
 
 ## Testing
 
