@@ -98,7 +98,7 @@ const LEVELS = [
         "                              ",
         "                        #     ",
         "         r              r     ",
-        "         r      >       r $  @",
+        "         r      >       r    @",
         "=========----------------=====",
     ],
     [
@@ -107,38 +107,43 @@ const LEVELS = [
         "                                 ",
         "                        #        ",
         "         r              r        ",
-        "         r          >   r $    @ ",
+        "         r          >   r      @ ",
         "=========----------------========",
     ],
     [
         "                                                ",
-        "                               $                ",
-        "                              ---               ",
+        "                                                ",
+        "                                                ",
         "                        #                       ",
         "         r              r                       ",
         "         r           >  r                      @",
-        "=========----------------=====  ===  ===  ===  =",
+        "=========----------------=====   ==   ==   ==  =",
     ],
     [
-        "                                          ==========",
-        "                                         ==         ",
-        "                                        ==         @",
-        "                        #        ========      =====",
-        "         r              r                     ==    ",
-        "         r           >  r        $           ==     ",
-        "=========----------------=====================      ",
+        "                                                    ",
+        "                                                    ",
+        "                                                  @ ",
+        "                        #                       === ",
+        "         r              r                ===        ",
+        "         r           >  r         ===               ",
+        "=========----------------======                     ",
     ],
     [
-        "=====================================",
-        "    =                                ",
-        "    =                                ",
-        "    =                                ",
-        "    =                                ",
-        "=== =                                ",
-        "  = =                   #            ",
-        "  =      r              r            ",
-        "  =      r           0  r   $     @  ",
-        "  =======----------------============",
+        "                                          ",
+        "                                          ",
+        "                                          ",
+        "                                          ",
+        "                                          ",
+        "=======                                   ",
+        "                             #            ",
+        "              r              r            ",
+        "              r           0  r            ",
+        "            ==----------------==          ",
+        "            ====================          ",
+        "            ====================          ",
+        "            ====================          ",
+        "            ====================          ",
+        "            ====================          ",
     ],
 
 ]
@@ -238,31 +243,25 @@ scene("game", ({ levelId, wins } = { levelId: 0, wins: 0 }) => {
 
     
 let playerHealth = 100;
-let baseHealth = add([
-  rect(100, 10),
-  pos(0, 0),
-  color(1, 0, 0),
-]);
+
+
 let healthBar = add([
   rect(playerHealth, 10),
   pos(10, 0),
-  color(0, 1, 0),
+  color(0),
 
 
 ]);
 player.on("update", () => {
 
-  baseHealth.pos = player.pos.add(-50, -160);
-  healthBar.pos = baseHealth.pos;
-
-
+  healthBar.pos = player.pos.add(-50, -160);
   healthBar.width = playerHealth;
 
   if (playerHealth <= 0) {
     go("lose");
   }
 });
-let enemy = add([rect(32, 32), pos(125, 125), "enemy"]);
+
 
 player.onCollide("enemy", () => {
   playerHealth -= 35;
@@ -283,7 +282,7 @@ player.onCollide("boss", () => {
   }
 });
 
-destroy(baseHealth);
+
 
     player.onUpdate(() => {
 
@@ -373,6 +372,9 @@ destroy(baseHealth);
                 scale(2),
                 fixed(),
             ]);
+            wait(2, () => {
+                go("win");
+            });
         }
     });
 ;
@@ -381,14 +383,6 @@ player.onCollide("water", (a) => {
         destroy(a)
         player.biggify(5)
         playerHealth += 35;
-    })
-
-    let winPitch = 0
-
-    onUpdate(() => {
-        if (winPitch > 0) {
-            winPitch = Math.max(0, winPitch - dt() * 100)
-        }
     })
 
     player.onCollide("belt", (c) => {
@@ -444,13 +438,159 @@ scene("lose", () => {
 
 scene("win", () => {
     add([
-        text("Congratulations! You are the NEW Boxing World Champion!" +
-        "You made it with a boxing record of " + wins + " wins!"),
-        pos(24, 24),
+        text("_____________________________________________________________"),
+        pos(0,1),
         scale(2),
         fixed(),
+        color(33,73,196),
 
     ])
+    add([
+        text("AAAAAAAND NEEEWWWWWW"),
+        pos(700,90),
+        scale(1),
+        fixed(),
+        color(135,206,235),
+
+    ])
+    add([
+        text("Congratulations! You are the NEW Boxing World Champion!"),
+        pos(400,120),
+        scale(1),
+        fixed(),
+        color(135,206,235),
+
+    ])
+    add([
+        text("You made it with a boxing record of " + "5" + " wins!"),
+        pos(500, 150),
+        scale(1),
+        fixed(),
+        color(135,206,235),
+
+    ])
+    add([
+        text("_____________________________________________________________"),
+        pos(0,400),
+        scale(2),
+        fixed(),
+        color(33,73,196),
+
+    ])
+    const boxer1 = add([
+        sprite("boxer"),
+        pos(1050, 0),
+        scale(5),
+        "belt"
+    ]);
+    loop(0.01, () => {
+        boxer1.pos.y += 1;
+        if (boxer1.pos.y > height()) {
+            destroy(boxer1);
+        }
+    });
+
+    const boxer2 = add([
+        sprite("boxer"),
+        pos(600, 0),
+        scale(5),
+        "belt"
+    ]);
+    loop(0.03, () => {
+        boxer2.pos.y += 1;
+        if (boxer2.pos.y > height()) {
+            destroy(boxer2);
+        }
+    });
+
+    const boxer3 = add([
+        sprite("boxer"),
+        pos(1400, 0),
+        scale(5),
+        "belt"
+    ]);
+    loop(0.05, () => {
+        boxer3.pos.y += 1;
+        if (boxer3.pos.y > height()) {
+            destroy(boxer3);
+        }
+    });
+    const boxer4 = add([
+        sprite("boxer"),
+        pos(400, 0),
+        scale(5),
+        "belt"
+    ]);
+    loop(0.05, () => {
+        boxer4.pos.y += 1;
+        if (boxer4.pos.y > height()) {
+            destroy(boxer4);
+        }
+    });
+
+    const enemy1 = add([
+        sprite("enemy"),
+        pos(250, 0),
+        scale(5),
+        "belt"
+    ]);
+    loop(0.03, () => {
+        enemy1.pos.y += 1;
+        if (enemy1.pos.y > height()) {
+            destroy(enemy1);
+        }
+    });
+
+    const enemy2 = add([
+        sprite("enemy"),
+        pos(1800, 0),
+        scale(5),
+        "belt"
+    ]);
+    loop(0.03, () => {
+        enemy2.pos.y += 1;
+        if (enemy2.pos.y > height()) {
+            destroy(enemy2);
+        }
+    });
+
+    const enemy3 = add([
+        sprite("enemy"),
+        pos(700, 0),
+        scale(5),
+        "belt"
+    ]);
+    loop(0.01, () => {
+        enemy3.pos.y += 1;
+        if (enemy3.pos.y > height()) {
+            destroy(enemy3);
+        }
+    });
+    const enemy4 = add([
+        sprite("enemy"),
+        pos(100, 0),
+        scale(5),
+        "belt"
+    ]);
+    loop(0.01, () => {
+        enemy4.pos.y += 1;
+        if (enemy4.pos.y > height()) {
+            destroy(enemy4);
+        }
+    });
+    const boss1 = add([
+        sprite("boss"),
+        pos(800, 0),
+        scale(7),
+        "belt"
+    ]);
+    loop(0.001, () => {
+        boss1.pos.y += 1;
+        if (boss1.pos.y > height()) {
+            destroy(boss1);
+        }
+    });
+
 
 })
 

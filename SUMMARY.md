@@ -16,14 +16,14 @@
 ## 2 Design and Development <a href="#design-and-development" id="design-and-development"></a>
 
 * [2.1 Design Frame](design-and-development/systems-diagram.md)
-* [2.2.1 Cycle 1](design-and-development/cycle-1.md)
-* [2.2.2 Cycle 2](design-and-development/cycle-1-1.md)
-* [2.2.3 Cycle 3](design-and-development/cycle-1-2.md)
-* [2.2.4 Cycle 4](design-and-development/cycle-1-3.md)
-* [2.2.5 Cycle 5](design-and-development/cycle-1-4.md)
-* [2.2.6 Cycle 6](design-and-development/cycle-1-5.md)
-* [2.2.7 Cycle 7](design-and-development/cycle-1-6.md)
-* [2.2.8 Cycle 8](design-and-development/cycle-1-7.md)
+* [2.2.1 Cycle 1 - Setup](design-and-development/cycle-1.md)
+* [2.2.2 Cycle 2 - Map Development](design-and-development/cycle-1-1.md)
+* [2.2.3 Cycle 3 - Player & Camera Movement](design-and-development/cycle-1-2.md)
+* [2.2.4 Cycle 4 - Level System](design-and-development/cycle-1-3.md)
+* [2.2.5 Cycle 5 - Enemies](design-and-development/cycle-1-4.md)
+* [2.2.6 Cycle 6 - Power-ups](design-and-development/cycle-1-5.md)
+* [2.2.7 Cycle 7 - Health Bar & Boss](design-and-development/cycle-1-6.md)
+* [2.2.8 Cycle 8 - Design & Graphics](design-and-development/cycle-1-7.md)
 * [Full Code](design-and-development/full-code.md)
 
 ## 3 Testing <a href="#testing" id="testing"></a>
