@@ -1,4 +1,4 @@
-# 2.2.8 Cycle 8
+# 2.2.8 Cycle 8 - Design & Graphics
 
 ### Design
 
@@ -101,7 +101,7 @@ Here are the screenshots of the style designs for the player character, the enem
 
 Here is a screenshot to display the new designs for the boxing ring. It fits the feel of retro and simple.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 Underneath is the code for the "Win" scene. It includes the text that is displayed in the centre of the scene. The code also includes the spawning of the characters on the win scene for aesthetics.
 

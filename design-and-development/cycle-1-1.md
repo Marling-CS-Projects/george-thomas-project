@@ -1,4 +1,4 @@
-# 2.2.2 Cycle 2
+# 2.2.2 Cycle 2 - Map Development
 
 ### Design
 
@@ -89,7 +89,7 @@ My challenge with this task is deciding to carry on with the flour that I have g
 
 This first picture shows what the first ring looks like from spawn.
 
-<figure><img src="../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This picture shows the boxing ring changes:
 
