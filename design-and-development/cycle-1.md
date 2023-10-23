@@ -1,4 +1,4 @@
-# 2.2.1 Cycle 1
+# 2.2.1 Cycle 1 - Setup
 
 ### Design
 
@@ -28,7 +28,7 @@ Non-functional aspects: Make the map include graphics that are user-friendly for
 ### Pseudocode
 
 ```
-Initialize Kaboom library
+Initialise Kaboom library
 
 Load sprite "bean" from "/sprites/bean.png"
 
