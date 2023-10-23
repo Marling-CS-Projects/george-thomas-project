@@ -30,7 +30,11 @@ Apple Newsroom. (n.d.). _Apple Introduces Safari for Windows_. \[online] Availab
 
 Small Business - Chron.com. (n.d.). _Mozilla Firefox System Requirements_. \[online] Available at: [https://smallbusiness.chron.com/mozilla-firefox-system-requirements-59076.html](https://smallbusiness.chron.com/mozilla-firefox-system-requirements-59076.html).
 
-‌
+‌Freepik. (n.d.). _Premium Vector | 8 bit pixel of the boxer character human pixels in vector illustration for game assets_. \[online] Available at: [https://www.freepik.com/premium-vector/8-bit-pixel-boxer-character-human-pixels-vector-illustration-game-assets\_25163143.htm](https://www.freepik.com/premium-vector/8-bit-pixel-boxer-character-human-pixels-vector-illustration-game-assets\_25163143.htm)
+
+Raturi, G. (2022). _Why Game Testing is Important For Successful Game App Development?_ \[online] Medium. Available at: [https://medium.datadriveninvestor.com/why-game-testing-is-important-for-successful-game-app-development-60251c9e5266](https://medium.datadriveninvestor.com/why-game-testing-is-important-for-successful-game-app-development-60251c9e5266).
+
+
 
 ‌
 

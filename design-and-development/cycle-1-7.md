@@ -95,11 +95,17 @@ Here are the screenshots of the style designs for the player character, the enem
 
 <figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption><p>Player Character Design</p></figcaption></figure>
 
+This character design was borrowed from ([Freepik, n.d.](../reference-list.md)). A website where when the picture is downloaded, the drawing is free to use and free to be edited.
+
 <figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption><p>Enemy Character Design</p></figcaption></figure>
+
+This character design is just an edited version of the one by ([Freepik, n.d.](../reference-list.md)).
 
 <figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption><p>Boss Character Design</p></figcaption></figure>
 
-Here is a screenshot to display the new designs for the boxing ring. It fits the feel of retro and simple.
+The boss character design is my creation from the inspiration from the one made by ([Freepik, n.d.](../reference-list.md))
+
+Here is a screenshot to display the new designs for the boxing ring. It fits the feel of retro and simple:
 
 <figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
