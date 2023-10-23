@@ -13,9 +13,7 @@ kaboom({
 
 
 loadPedit("boxer", "/sprites/boxer.pedit")
-loadSprite("bag", "/sprites/bag.png")
 loadPedit("enemy", "/sprites/enemy.pedit")
-loadSprite("grass", "/sprites/grass.png")
 loadPedit("ring", "/sprites/ring.pedit")
 loadSprite("portal", "/sprites/portal.png")
 loadPedit("belt", "/sprites/belt.pedit")
@@ -23,11 +21,6 @@ loadPedit("water", "/sprites/water.pedit")
 loadPedit("rope", "/sprites/rope.pedit")
 loadPedit("floor", "/sprites/floor.pedit")
 loadPedit("boss", "/sprites/boss.pedit")
-
-loadSprite("bean", "/sprites/bean.png")
-loadSprite("steel", "/sprites/steel.png")
-loadSprite("bean", "/sprites/bean.png")
-loadSprite("ghosty", "/sprites/ghosty.png")
 
 setGravity(3200)
 
