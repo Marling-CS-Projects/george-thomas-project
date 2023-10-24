@@ -6,6 +6,8 @@ Tretkoff, E. (2008). _October 1958: Physicist Invents First Video Game_. \[onlin
 
 ‌Statista (2022). _Video Games - Worldwide | Statista Market Forecast_. \[online] Statista. Available at: [https://www.statista.com/outlook/dmo/digital-media/video-games/worldwide#:\~:text=Revenue%20in%20the%20Video%20Games](https://www.statista.com/outlook/dmo/digital-media/video-games/worldwide).
 
+OCR Computer Science A Level 2.2.2 Computational Methods Intermediate Notes. (n.d.). Available at: [https://pmt.physicsandmathstutor.com/download/Computer-Science/A-level/Notes/OCR/2.2-Problem-Solving-and-Programming/Intermediate/2.2.2.%20Computational%20Methods.pdf](https://pmt.physicsandmathstutor.com/download/Computer-Science/A-level/Notes/OCR/2.2-Problem-Solving-and-Programming/Intermediate/2.2.2.%20Computational%20Methods.pdf)
+
 ‌Clement, J. (2022). _Top video game genres worldwide by age 2020_. \[online] Statista. Available at: [https://www.statista.com/statistics/1263585/top-video-game-genres-worldwide-by-age/](https://www.statista.com/statistics/1263585/top-video-game-genres-worldwide-by-age/).
 
 ‌Evenden, I. (2021). _25 of the best platform games ever_. \[online] Stuff. Available at: [https://www.stuff.tv/features/25-best-platform-games-ever/](https://www.stuff.tv/features/25-best-platform-games-ever/)
@@ -23,6 +25,12 @@ Wikipedia. (2021). _Gaming keypad_. \[online] Available at: [https://en.wikipedi
 ‌Zeolearn. (n.d.). _How to Install Node JS on Windows | Set Up Node JS on Windows_. \[online] Available at: [https://www.zeolearn.com/magazine/install-node-js-on-windows](https://www.zeolearn.com/magazine/install-node-js-on-windows)
 
 anzhou (n.d.). _Visual Studio 2019 System Requirements_. \[online] learn.microsoft.com. Available at: [https://learn.microsoft.com/en-us/visualstudio/releases/2019/system-requirements](https://learn.microsoft.com/en-us/visualstudio/releases/2019/system-requirements).
+
+Wikipedia Contributors (2019). _Super Mario Bros._ \[online] Wikipedia. Available at: [https://en.wikipedia.org/wiki/Super\_Mario\_Bros](https://en.wikipedia.org/wiki/Super\_Mario\_Bros)
+
+The Editors of Encyclopedia Britannica (2013). Street Fighter | electronic game series. In: _Encyclopædia Britannica_. \[online] Available at: [https://www.britannica.com/topic/Street-Fighter](https://www.britannica.com/topic/Street-Fighter)
+
+Wikipedia. (2023). _Broforce_. \[online] Available at: [https://en.wikipedia.org/wiki/Broforce](https://en.wikipedia.org/wiki/Broforce)
 
 Google.com. (2012). _Chrome Browser system requirements - Google Chrome Enterprise Help_. \[online] Available at: [https://support.google.com/chrome/a/answer/7100626?hl=en](https://support.google.com/chrome/a/answer/7100626?hl=en).
 
